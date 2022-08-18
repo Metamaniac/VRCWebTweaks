@@ -1,0 +1,369 @@
+/* ==UserStyle==
+@name           VRChat WebTweaks
+@namespace      table
+@version        0.0.1
+@homepageURL	https://github.com/Metamaniac/VRCWebTweaks
+@updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
+@description    Making the VRChat Web experience better since that year with all the 2s in it!
+@author         Metamaniac (Table)
+==/UserStyle== */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@-moz-document domain("vrchat.com") {
+	body{
+		font-family: 'Dosis', sans-serif;
+	}
+}
+
+@-moz-document domain("feedback.vrchat.com") {
+	
+	/* ~~~~ BASE ~~~~ */
+
+	body, html{
+		background: #0e1013;
+		background-image: url("https://s3.amazonaws.com/assets.vrchat.com/www/images/Background_lines.svg");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	a{
+		font-size: inherit;
+	}
+
+
+	/* ~~~~ HOME ~~~~ */
+
+	.subdomainHome .contentInnerContainer{
+		max-width: 80%;
+	}
+	.boardGridItem{
+		min-height: 10vh;
+		background: rgb(7, 36, 43);
+		border: 2px solid rgb(5, 60, 72);
+		border-radius: 8px;
+	}
+	.boardGridItem:hover{
+		background: rgb(7, 52, 63);
+		border: 2px solid rgb(8, 108, 132);
+		transform: scale(1.05);
+	}
+	.boardGridItem .top{
+		height: 100%;
+	}
+	.boardGridItem .top .name{
+		font-size: 200%;
+		line-height: 100%;
+		color: rgb(106, 227, 249);
+	}
+	.publicNav .publicNavContent .secondaryNav .search{
+		margin-left: 0px;
+		margin-bottom: 5px;
+	}
+	.globalSearch .textInput{
+		background: rgb(7, 36, 43);
+		border: 2px solid rgb(5, 60, 72);
+		border-radius: 8px;
+	}
+	.globalSearch .textInput .inputContainer input, .globalSearch .globalSearchInput .inset .icon, .globalSearch .globalSearchInput.focused .inset .icon, .globalSearch .globalSearchInput.populated .inset .icon, .globalSearch .uppercaseHeader{
+		color: #f8f9fa;
+	}
+	.globalSearch .globalSearchInput.focused .inputContainer, .globalSearch .globalSearchInput.populated .inputContainer{
+		width: 400px;
+	}
+	.globalSearch .globalSearchInput .inset, .globalSearch .x-button{
+		margin: 0 15px 0 15px;
+	}
+	.subdomainSearch h1{
+		font-size: 20px;
+		color: #888;
+	}
+	.postList .noPosts{
+		color: #f8f9fa;
+		font-size: 25px;
+		text-align: center;
+	}
+
+
+
+	/* ~~~~ TOPBAR ~~~~ */
+
+	.contentContainer .contentInnerContainer{
+		max-width: 80%;
+	}
+	.publicNav{
+		/* background: linear-gradient(130deg, #012324 10%, #104649 100%, #003d40 100%) !important; */
+		background: rgb(7, 36, 43) !important;
+		border-bottom: 3px solid rgb(5, 60, 72);
+	}
+
+	/* TOP LEFT */
+	.companyLogo{
+		background-image: url("https://assets.vrchat.com/www/brand/vrchat-logo-white-transparent-crop-background.png");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		height: 60px !important;
+		width: 200px !important;
+		margin-top: 0.5rem !important;
+	}
+	.companyName, .companyLogo img{
+		display: none;
+	}
+
+	/* DROPDOWN */
+	.dropdownPortal .dropdown{
+		max-height: none;
+	}
+
+	/* TOP RIGHT */
+	.publicNav .publicNavContent .mainNav .rightContainer{
+		padding: 35px 0 0 0;
+	}
+	.adminNavAccountMenu .userAvatar{
+		width: 52px;
+		height: 52px;
+	}
+	.userAvatar .avatarContainer, .userAvatar .avatarContainer img{
+		border-radius: 30%;
+	}
+
+
+
+	/* ~~~~ POST LIST ~~~~ */
+
+	.boardHome .contentInnerContainer{
+		max-width: 90%;
+	}
+	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
+		background: #181b1f;
+		border-radius: 10px;
+	}
+	.postList .topContainer{
+		background: #252a30;
+		color: #f8f9fa;
+		border-radius: 10px 10px 0 0;
+	}
+	.posts{
+		padding: 2%;
+	}
+	.postListItem .postLink .body .postTitle{
+		color: #fc0;
+		text-shadow: 0 0 4px #000, 0 0 5px #fff;
+	}
+	.postListItem .postLink .body .postDetails{
+		color: #f8f9fa;
+	}
+	.postCommentCount .icon-comment, .postCommentCount span{
+		color: #f8f9fa;
+	}
+	.postList .topContainer .postListMenu{
+		margin: 0;
+	}
+	.postListMenu .menu{
+		padding: 15px 25px 15px 25px;
+	}
+	.postListMenu .menu .text, .postListMenu .menu .selector .selectedName, .postListMenu .menu .categoriesMenu .selectedName{
+		font-size: 20px;
+	}
+	.postListMenu .menu .selector .dropdown{
+		background: #181b1f;
+		box-shadow: 0 0 10px #000;
+	}
+	.searchContainer{
+		border: 2px solid rgb(5, 60, 72) !important;
+		border-radius: 8px;
+		color: rgb(106, 227, 249);
+	}
+	.postListMenu .searchContainer .searchInputContents{
+		background: rgb(7, 36, 43);
+	}
+	.postListMenu .searchContainer{
+		margin: 11px;
+	}
+	.suggestedPosts .heading, .searching{
+		background: #252a30;
+		border-radius: 10px 10px 0 0;
+		color: #f8f9fa;
+		text-align: center;
+		font-size: 25px !important;
+	}
+	.postVotes{
+		border-radius: 10px 10px 0 0;
+		background: rgb(7, 36, 43);
+		border: 2px solid rgb(5, 60, 72);
+		color: #f8f9fa;
+		text-align: center;
+		font-size: 25px !important
+	}
+	
+	
+	/* CREATE POST */
+	.boardHome .sidebarContainer{
+		width: inherit;
+		max-width: 450px;
+	}
+	.boardDetails{
+		max-height: none;
+		background: rgb(7, 36, 43);
+		border: 2px solid rgb(5, 60, 72);
+		border-radius: 8px;
+		color: rgb(106, 227, 249);
+	}
+	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
+		background: rgb(7, 52, 63);
+		border: 2px solid rgb(8, 108, 132);
+	}
+	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input{
+		color: #f8f9fa !important;
+	}
+	.suggestions{
+		display: always;
+	}
+	.postCategoryMenu .categoryDropdownContainer{
+		background: rgb(7, 52, 63);
+	}
+
+
+	/* ~~~~ INDIVIDUAL POST ~~~~ */
+
+	/* GENERIC */
+	.subdomainPost .contentInnerContainer{
+		max-width: 80%;
+	}
+	.post .postContent .postBody, .commentBody .line{
+		max-width: 100%;
+	}
+	.subdomainPost .postContainer{
+		background: #181b1f;
+	}
+	.overlayWrapper .overlayContainer .overlay{
+		background: #252a30;
+		border: 0;
+	}
+	.userInfo{
+		padding: 0 0 0 10px;
+	}
+	.userLockup .userInfo .name{
+		color: #f8f9fa;
+	}
+	.userLockup .userInfo, .userLockup .userInfo .name, .postStatusChange .topContainer .update span{
+		line-height: 36px;
+		font-size: 20px;
+	}
+	.userLockup .userAvatar{
+		width: 52px;
+		height: 52px;
+	}
+	.comment .bottomContainer, .post .postContent .postBody, .postStatusChange .bottomContainer, .postMerge .bottomContainer{
+		padding: 0 30px 0 88px;
+	}
+	.subdomainPost .postContainer .postHeader{
+		padding: 15px;
+	}
+	.markdown .inlineCodeBlock{
+		background-color: #000;
+	}
+
+	/* BODY */
+	.post .postContent .commentComposer, .post .postContent .postMenu{
+		padding: 0 88px;
+	}
+	.commentBody .line, .commentBody p, .commentBody span, .postBody .markdown .line, .postActivity .activityList, .postBody{
+		font-size: 18px;
+		line-height: 25px;
+		color: #f8f9fa;
+	}
+	.postHeader .statusTitle .postTitle{
+		color: rgb(255, 204, 0);
+		text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+		font-size: 25px;
+		line-height: 30px;
+		margin: 0;
+	}
+	.userLockup, .postStatusChange .topContainer .update .userLockupContainer .userLockup{
+		padding: 0 15px 0 15px;
+	}
+	.post .userLockup .userAvatarContainer{
+		margin: 0 10px 0 0;
+	}
+	.markdown .multiLineCodeBlock{
+		background-color: transparent;
+	}
+
+	/* COMMENTS */
+	.post .mainContent > .commentComposer{
+		margin: 0 30px 0 85px;
+		max-width: 100%;
+	}
+	.commentComposer .autoResizeTextarea{
+		background: rgb(7, 36, 43);
+	}
+	.commentComposer .autoResizeTextarea textarea{
+		color: #f8f9fa;
+	}
+	.commentComposer .composerForm{
+		background: rgb(7, 36, 43);
+		transition: background 0.2s ease-in-out 0s;
+		border: 2px solid rgb(5, 60, 72) !important;
+		box-shadow: 0 0 3px #000;
+	}
+	.commentComposer .composerForm .buttonBar{
+		border-top: none;
+	}
+	.commentComposer .focused{
+		border-radius: 5px 5px 0 0;
+	}
+	.postMerge .bottomContainer .mergeContainer{
+		background: #252a30;
+		border: 0;
+		box-shadow: 0 0 10px #000;
+	}
+
+
+	/* ~~~~ VOTERS ~~~~ */
+
+	.subdomainPost .sidebarSection{
+		max-height: none;
+		background: rgb(7, 36, 43) !important;
+		border: 2px solid rgb(5, 60, 72) !important;
+		border-radius: 8px !important;
+	}
+	.sidebarSection .category{
+		margin: 0 0 15px !important;
+	}
+	.category .label{
+		font-size: 20px !important;
+		color: rgb(106, 227, 249);
+	}
+	.subdomainPost .sidebarContainer .uppercaseHeader{
+		color: #0e9bb1;
+	}
+	.subdomainPostVotersList .subdomainPostVotersContents{
+		background: #181b1f;
+		border: 0;
+	}
+	.subdomainPostVotersList .subdomainPostVoters .users{
+		display: block;
+		column-count: 5;
+	}
+	.subdomainPostVotersList .subdomainPostVoters .users .voter{
+		max-width: 300px;
+	}
+	.notFound{
+		color: #f8f9fa;
+		font-size: 25px;
+		text-align: center;
+	}
+}
+
+/* WIP?? Might touch the forums with layout stuff */
+/* @-moz-document domain("ask.vrchat.com") {
+	html body #main-outlet, .wrap{
+		max-width: 80%;
+	}
+	video{
+		max-height: none;
+	}
+	.topic-body{
+		width: inherit;
+	}
+} */
