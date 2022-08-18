@@ -38,13 +38,13 @@
 	}
 	.boardGridItem{
 		min-height: 10vh;
-		background: rgb(7, 36, 43);
-		border: 2px solid rgb(5, 60, 72);
+		background: #07242b;
+		border: 2px solid #053c48;
 		border-radius: 8px;
 	}
 	.boardGridItem:hover{
-		background: rgb(7, 52, 63);
-		border: 2px solid rgb(8, 108, 132);
+		background: #07343f;
+		border: 2px solid #086c84;
 		transform: scale(1.05);
 	}
 	.boardGridItem .top{
@@ -53,15 +53,15 @@
 	.boardGridItem .top .name{
 		font-size: 200%;
 		line-height: 100%;
-		color: rgb(106, 227, 249);
+		color: #6ae3f9;
 	}
 	.publicNav .publicNavContent .secondaryNav .search{
 		margin-left: 0px;
 		margin-bottom: 5px;
 	}
 	.globalSearch .textInput{
-		background: rgb(7, 36, 43);
-		border: 2px solid rgb(5, 60, 72);
+		background: #07242b;
+		border: 2px solid #053c48;
 		border-radius: 8px;
 	}
 	.globalSearch .textInput .inputContainer input, .globalSearch .globalSearchInput .inset .icon, .globalSearch .globalSearchInput.focused .inset .icon, .globalSearch .globalSearchInput.populated .inset .icon, .globalSearch .uppercaseHeader{
@@ -92,8 +92,8 @@
 	}
 	.publicNav{
 		/* background: linear-gradient(130deg, #012324 10%, #104649 100%, #003d40 100%) !important; */
-		background: rgb(7, 36, 43) !important;
-		border-bottom: 3px solid rgb(5, 60, 72);
+		background: #07242b !important;
+		border-bottom: 3px solid #053c48;
 	}
 
 	/* TOP LEFT */
@@ -169,12 +169,12 @@
 		box-shadow: 0 0 10px #000;
 	}
 	.searchContainer{
-		border: 2px solid rgb(5, 60, 72) !important;
+		border: 2px solid #053c48 !important;
 		border-radius: 8px;
-		color: rgb(106, 227, 249);
+		color: #6ae3f9;
 	}
 	.postListMenu .searchContainer .searchInputContents{
-		background: rgb(7, 36, 43);
+		background: #07242b;
 	}
 	.postListMenu .searchContainer{
 		margin: 11px;
@@ -188,11 +188,22 @@
 	}
 	.postVotes{
 		border-radius: 10px 10px 0 0;
-		background: rgb(7, 36, 43);
-		border: 2px solid rgb(5, 60, 72);
+		background: #07242b;
+		border: 2px solid #053c48;
 		color: #f8f9fa;
 		text-align: center;
 		font-size: 25px !important
+	}
+	.postVotes:hover{
+		background: #07343f;
+		border: 2px solid #086c84;
+	}
+	
+	.postVotes .upvote, .postVotes:hover .upvote:not(.voted){
+		border-bottom: 9px solid #f8f9fa;
+	}
+	.postVotes .upvote.voted{
+		border-bottom: 9px solid #f00 !important;
 	}
 	
 	
@@ -203,14 +214,14 @@
 	}
 	.boardDetails{
 		max-height: none;
-		background: rgb(7, 36, 43);
-		border: 2px solid rgb(5, 60, 72);
+		background: #07242b;
+		border: 2px solid #053c48;
 		border-radius: 8px;
-		color: rgb(106, 227, 249);
+		color: #6ae3f9;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
-		background: rgb(7, 52, 63);
-		border: 2px solid rgb(8, 108, 132);
+		background: #07343f;
+		border: 2px solid #086c84;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input{
 		color: #f8f9fa !important;
@@ -219,7 +230,7 @@
 		display: always;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
-		background: rgb(7, 52, 63);
+		background: #07343f;
 	}
 
 
@@ -273,7 +284,7 @@
 		color: #f8f9fa;
 	}
 	.postHeader .statusTitle .postTitle{
-		color: rgb(255, 204, 0);
+		color: #fc0;
 		text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
 		font-size: 25px;
 		line-height: 30px;
@@ -295,15 +306,15 @@
 		max-width: 100%;
 	}
 	.commentComposer .autoResizeTextarea{
-		background: rgb(7, 36, 43);
+		background: #07242b;
 	}
 	.commentComposer .autoResizeTextarea textarea{
 		color: #f8f9fa;
 	}
 	.commentComposer .composerForm{
-		background: rgb(7, 36, 43);
+		background: #07242b;
 		transition: background 0.2s ease-in-out 0s;
-		border: 2px solid rgb(5, 60, 72) !important;
+		border: 2px solid #053c48 !important;
 		box-shadow: 0 0 3px #000;
 	}
 	.commentComposer .composerForm .buttonBar{
@@ -323,8 +334,8 @@
 
 	.subdomainPost .sidebarSection{
 		max-height: none;
-		background: rgb(7, 36, 43) !important;
-		border: 2px solid rgb(5, 60, 72) !important;
+		background: #07242b !important;
+		border: 2px solid #053c48 !important;
 		border-radius: 8px !important;
 	}
 	.sidebarSection .category{
@@ -332,7 +343,7 @@
 	}
 	.category .label{
 		font-size: 20px !important;
-		color: rgb(106, 227, 249);
+		color: #6ae3f9;
 	}
 	.subdomainPost .sidebarContainer .uppercaseHeader{
 		color: #0e9bb1;
