@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           VRChat WebTweaks
 @namespace      table
-@version        0.0.2
+@version        0.0.3
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description    Making the VRChat Web experience better since that year with all the 2s in it!
@@ -124,6 +124,69 @@
 	}
 	.userAvatar .avatarContainer, .userAvatar .avatarContainer img{
 		border-radius: 30%;
+	}
+
+
+
+	/* ~~~~ NOTIFICATIONS ~~~~ */
+
+	/* TOP BAR */
+	.notificationsMenuPortal{
+		width: 500px;
+	}
+	.notificationsMenuPortal .notificationsDropdown{
+		border-radius: 10px;
+		background: #07242b;
+		border: 2px solid #053c48;
+		color: #f8f9fa;
+	}
+	.notificationsDropdownHeader h3{
+		color: inherit;
+		font-size: 15px;
+	}
+	.notificationsDropdownHeader span{
+		color: #ed6700 !important;
+	}
+	.notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader{
+		border-bottom: 2px solid #053c48;
+	}
+	.notificationsMenuPortal .notificationsDropdown .notificationsDropdownFooter{
+		border-top: 2px solid #053c48;
+	}
+	.notification.unread{
+		border-left: 2px solid #ed6700;
+	}
+	.notification:hover{
+		background: #07343f;
+	}
+	.notificationsMenuPortal .notificationsDropdown::after{
+		border-color: transparent transparent #053c48 #053c48;
+		top: 0px;
+	}
+
+	/* DEDICATED PAGE */
+	.subdomainNotifications .notificationHeader .heading{
+		font-size: 30px;
+		color: #f8f9fa;
+	}
+	.subdomainNotifications .notificationHeader .markAll{
+		font-size: 20px;
+		color: #ed6700;
+	}
+	.notificationList .notificationListBody{
+		border-radius: 10px;
+		background: #07242b;
+		border: 2px solid #053c48;
+		color: #f8f9fa;
+	}
+	.notificationsDropdown .postLink .notification span{
+		font-size: 18px;
+	}
+	.contentInnerContainer .postLink .notification span{
+		font-size: 20px;
+	}
+	.notification .timestamp{
+		margin: 4px 0 0 0;
 	}
 
 
