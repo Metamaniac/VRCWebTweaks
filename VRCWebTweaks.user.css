@@ -91,7 +91,6 @@
 		max-width: 80%;
 	}
 	.publicNav{
-		/* background: linear-gradient(130deg, #012324 10%, #104649 100%, #003d40 100%) !important; */
 		background: #07242b !important;
 		border-bottom: 3px solid #053c48;
 	}
@@ -99,11 +98,11 @@
 	/* TOP LEFT */
 	.companyLogo{
 		background-image: url("https://assets.vrchat.com/www/brand/vrchat-logo-white-transparent-crop-background.png");
-		background-size: auto 100%;
+		background-size: auto 90%;
 		background-repeat: no-repeat;
 		height: 60px !important;
 		width: 200px !important;
-		margin-top: 0.5rem !important;
+		margin-top: 1rem !important;
 	}
 	.companyName, .companyLogo img{
 		display: none;
@@ -131,6 +130,9 @@
 	/* ~~~~ NOTIFICATIONS ~~~~ */
 
 	/* TOP BAR */
+	.notificationsMenu{
+		margin: 0 10px 0 0;
+	}
 	.notificationsMenuPortal{
 		width: 500px;
 	}
@@ -210,7 +212,7 @@
 	}
 	.postListItem .postLink .body .postTitle{
 		color: #fc0;
-		text-shadow: 0 0 4px #000, 0 0 5px #fff;
+		text-shadow: 0 0 4px #000;
 	}
 	.postListItem .postLink .body .postDetails{
 		color: #f8f9fa;
@@ -234,13 +236,19 @@
 	.searchContainer{
 		border: 2px solid #053c48 !important;
 		border-radius: 8px;
-		color: #6ae3f9;
+	}
+	.searchContainer .textInput .inputContainer input{
+		color: #f8f9fa;
 	}
 	.postListMenu .searchContainer .searchInputContents{
 		background: #07242b;
 	}
 	.postListMenu .searchContainer{
 		margin: 11px;
+	}
+	.postListMenu .searchContainer.active{
+		background: #07343f;
+		border: 2px solid #086c84;
 	}
 	.suggestedPosts .heading, .searching{
 		background: #252a30;
@@ -266,7 +274,7 @@
 		border-bottom: 9px solid #f8f9fa;
 	}
 	.postVotes .upvote.voted{
-		border-bottom: 9px solid #f00 !important;
+		border-bottom: 9px solid #ed6700 !important;
 	}
 	
 	
@@ -282,6 +290,9 @@
 		border-radius: 8px;
 		color: #6ae3f9;
 	}
+	.boardDetails .heading{
+		font-size: 22px;
+	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
 		background: #07343f;
 		border: 2px solid #086c84;
@@ -289,19 +300,29 @@
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input{
 		color: #f8f9fa !important;
 	}
+	.boardDetails .createPostForm .fileInputButton{
+		background: #07343f;
+		border: 2px solid #086c84;
+		border-radius: 8px;
+	}
+	.fileInput .fileInputButton .icon{
+		color: #f8f9fa;
+	}
 	.suggestions{
 		display: always;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
 		background: #07343f;
 	}
+	
 
 
 	/* ~~~~ INDIVIDUAL POST ~~~~ */
 
 	/* GENERIC */
 	.subdomainPost .contentInnerContainer{
-		max-width: 80%;
+		max-width: 1600px;
+		width: 80%;
 	}
 	.post .postContent .postBody, .commentBody .line{
 		max-width: 100%;
@@ -390,6 +411,19 @@
 		background: #252a30;
 		border: 0;
 		box-shadow: 0 0 10px #000;
+	}
+	.reactionsMenu .reactors .more{
+		margin: 5px 0;
+		display: flex;
+		justify-content: center;
+	}
+	.reactionsMenu .reactors .more button{
+		background-color: transparent;
+		color: #ed6700;
+	}
+	.modal{
+		background: linear-gradient(0deg, #07242b 0%, #07343f 100%);
+		box-shadow: 0 0 50px #000;
 	}
 
 
