@@ -1,11 +1,13 @@
 /* ==UserStyle==
-@name           VRChat WebTweaks
-@namespace      table
-@version        0.0.4
+@name			VRChat WebTweaks
+@namespace		table
+@version		0.0.5
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
-@description    Making the VRChat Web experience better since that year with all the 2s in it!
-@author         Metamaniac (Table)
+@description	Making the VRChat Web experience better since that year with all the 2s in it!
+@author			Metamaniac (Table)
+@preprocessor	stylus
+@var select		customFont	"Font Override"	["Dosis*", "inherit"]
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
@@ -17,7 +19,7 @@
 }
 @-moz-document domain("vrchat.com") {
 	body{
-		font-family: 'Dosis', sans-serif;
+		font-family: customFont, sans-serif;
 	}
 }
 
@@ -64,8 +66,11 @@
 		color: #6ae3f9;
 	}
 	.publicNav .publicNavContent .secondaryNav .search{
-		margin-left: 0px;
-		margin-bottom: 5px;
+		margin-left: 0;
+		margin-bottom: -3px;
+	}
+	.globalSearch .textInput .inputContainer input{
+		line-height: inherit;
 	}
 	.globalSearch .globalSearchInput .inset label{
 		margin: 0 0 0 85px;
@@ -83,6 +88,9 @@
 	}
 	.globalSearch .globalSearchInput .inset, .globalSearch .x-button{
 		margin: 0 15px 0 15px;
+	}
+	.globalSearch.isFocused, .globalSearch.populated{
+		border-bottom: 0;
 	}
 	.subdomainSearch h1{
 		font-size: 20px;
@@ -114,7 +122,7 @@
 		background-repeat: no-repeat;
 		height: 60px !important;
 		width: 200px !important;
-		margin-top: 1rem !important;
+		margin-top: 1.5rem !important;
 	}
 	.companyName, .companyLogo img, .publicNav .publicNavContent .secondaryNav .link .icon{
 		display: none;
@@ -123,12 +131,15 @@
 		color: #f8f9fa;
 	}
 	.publicNav .publicNavContent .secondaryNav .link:hover .text, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .dropdownContainer .selection .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .selection:not(.split) .icon-chevron-down, .publicNav .publicNavContent .secondaryNav .link.activeLink .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .icon-chevron-down:hover{
-		color: #ed6700 !important;
+		color: #eb8500 !important;
 	}
 	.publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div{
 		border-right: 0;
 		padding: 0;
 		margin: 0 7px 0 0;
+	}
+	.publicNav .publicNavContent .secondaryNav .link.roadmap, .publicNav .publicNavContent .secondaryNav .link.boards{
+		padding: 10px;
 	}
 	.dropdownContainer .selection.split .icon-chevron-down{
 		padding: 0;
@@ -154,7 +165,7 @@
 	}
 	.boardDropdownSelector .dropdown .option .optionContent .count{
 		background: transparent;
-		color: #ed6700;
+		color: #eb8500;
 	}
 	.dropdown a{
 		transition: all .075s ease-in-out;
