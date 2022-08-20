@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           VRChat WebTweaks
 @namespace      table
-@version        0.0.3
+@version        0.0.4
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description    Making the VRChat Web experience better since that year with all the 2s in it!
@@ -9,6 +9,12 @@
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@keyframes shake {
+	10%, 90% {transform: translate3d(-1px, 0, 0);}
+	20%, 80% {transform: translate3d(2px, 0, 0);}
+	30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+	40%, 60% {transform: translate3d(4px, 0, 0);}
+}
 @-moz-document domain("vrchat.com") {
 	body{
 		font-family: 'Dosis', sans-serif;
@@ -34,10 +40,12 @@
 	/* ~~~~ HOME ~~~~ */
 
 	.subdomainHome .contentInnerContainer{
-		max-width: 80%;
+		max-width: 1600px;
+		width: 80%;
 	}
 	.boardGridItem{
-		min-height: 10vh;
+		height: 10vh;
+		max-height: 110px;
 		background: #07242b;
 		border: 2px solid #053c48;
 		border-radius: 8px;
@@ -58,6 +66,9 @@
 	.publicNav .publicNavContent .secondaryNav .search{
 		margin-left: 0px;
 		margin-bottom: 5px;
+	}
+	.globalSearch .globalSearchInput .inset label{
+		margin: 0 0 0 85px;
 	}
 	.globalSearch .textInput{
 		background: #07242b;
@@ -88,10 +99,11 @@
 	/* ~~~~ TOPBAR ~~~~ */
 
 	.contentContainer .contentInnerContainer{
-		max-width: 80%;
+		max-width: 1600px;
+		width: 80%;
 	}
 	.publicNav{
-		background: #07242b !important;
+		background: linear-gradient(0deg, #07242b 0%, #07343f 100%) !important;
 		border-bottom: 3px solid #053c48;
 	}
 
@@ -104,13 +116,48 @@
 		width: 200px !important;
 		margin-top: 1rem !important;
 	}
-	.companyName, .companyLogo img{
+	.companyName, .companyLogo img, .publicNav .publicNavContent .secondaryNav .link .icon{
 		display: none;
 	}
+	.publicNav .publicNavContent .secondaryNav .link .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .left{
+		color: #f8f9fa;
+	}
+	.publicNav .publicNavContent .secondaryNav .link:hover .text, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .dropdownContainer .selection .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .selection:not(.split) .icon-chevron-down, .publicNav .publicNavContent .secondaryNav .link.activeLink .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .icon-chevron-down:hover{
+		color: #ed6700 !important;
+	}
+	.publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div{
+		border-right: 0;
+		padding: 0;
+		margin: 0 7px 0 0;
+	}
+	.dropdownContainer .selection.split .icon-chevron-down{
+		padding: 0;
+	}
+	
 
 	/* DROPDOWN */
 	.dropdownPortal .dropdown{
 		max-height: none;
+		background: #07343f !important;
+	}
+	.boardDropdownSelector .dropdown .option .optionContent{
+		color: #f8f9fa;
+	}
+	.dropdownPortal .dropdown .option.focused{
+		background: #07242b;
+		border-radius: 0;
+		outline: 0;
+	}
+	.dropdownPortal .dropdown.controlled .option:hover{
+		background: #07242b;
+		border-radius: 0;
+	}
+	.boardDropdownSelector .dropdown .option .optionContent .count{
+		background: transparent;
+		color: #ed6700;
+	}
+	.dropdown a{
+		transition: all .075s ease-in-out;
 	}
 
 	/* TOP RIGHT */
@@ -124,7 +171,26 @@
 	.userAvatar .avatarContainer, .userAvatar .avatarContainer img{
 		border-radius: 30%;
 	}
-
+	.adminNavAccountMenuPortal .menuItems{
+		background: #07343f;
+		box-shadow: 0 0 10px #00000033;
+	}
+	.adminNavAccountMenuPortal .menuItems .section .menuItem{
+		color: #f8f9fa;
+	}
+	.adminNavAccountMenuPortal .arrow{
+		border-color: #07343f;
+	}
+	.adminNavAccountMenuPortal .menuItems .section .menuItem:hover{
+		color: #6ae3f9;
+	}
+	.tooltipContainer .tooltip{
+		display: none;
+		background: #07343f;
+	}
+	.tooltipContainer .tooltip .arrow{
+		border-color: transparent #07343f #07343f transparent;
+	}
 
 
 	/* ~~~~ NOTIFICATIONS ~~~~ */
@@ -196,11 +262,15 @@
 	/* ~~~~ POST LIST ~~~~ */
 
 	.boardHome .contentInnerContainer{
-		max-width: 90%;
+		max-width: 1750px;
+		width: 90%;
 	}
 	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
 		background: #181b1f;
 		border-radius: 10px;
+	}
+	.postListMenu .menu .selector .dropdown .categories .option:hover, .postListMenu .menu .selector .dropdown .filters .option:hover, .postListMenu .menu .selector .dropdown .sorts .option:hover{
+		background: #000;
 	}
 	.postList .topContainer{
 		background: #252a30;
@@ -208,7 +278,7 @@
 		border-radius: 10px 10px 0 0;
 	}
 	.posts{
-		padding: 2%;
+		padding: 2% 2% 0 2%;
 	}
 	.postListItem .postLink .body .postTitle{
 		color: #fc0;
@@ -308,13 +378,34 @@
 	.fileInput .fileInputButton .icon{
 		color: #f8f9fa;
 	}
-	.suggestions{
-		display: always;
+
+	.createPostForm .categoryDropdownContainer{
+		top: 22px;
+	}
+	.createPostForm .categoryDropdown.selected .label{
+		color: inherit;
+	}
+	.postCategoryMenu .categoryDropdownContainer{
+		background: #07242b;
+		border: 2px solid #053c48;
+	}
+	.categorySelector.floatingMenu .categoryInput .textInput{
+		background: #07242b;
+		border-bottom: none;
+	}
+	.categorySelector.floatingMenu .categoryInput .textInput.focused{
+		border-bottom: 2px solid #053c48;
+	}
+	.categorySelector.floatingMenu .categoryInput .suggestions{
+		max-height: 240px;
+		background: #07242b;
+	}
+	.categorySelector .categoryInput .suggestions .suggestion:hover{
+		background: #04191e;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
 		background: #07343f;
 	}
-	
 
 
 	/* ~~~~ INDIVIDUAL POST ~~~~ */
@@ -445,6 +536,11 @@
 	.subdomainPost .sidebarContainer .uppercaseHeader{
 		color: #0e9bb1;
 	}
+	.subdomainPostVoters .more{
+		margin: 10px 0 0 0;
+		color: #ed6700 !important;
+		text-align: center;
+	}
 	.subdomainPostVotersList .subdomainPostVotersContents{
 		background: #181b1f;
 		border: 0;
@@ -461,12 +557,44 @@
 		font-size: 25px;
 		text-align: center;
 	}
+
+
+	/* ~~~~ SETTINGS ~~~~ */
+
+	.subdomainAccountSettings, .subdomainAccountSettings .nullState{
+		background: #07242b;
+		border: 2px solid #053c48 !important;
+	}
+	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton, .textInput.disabled{
+		background: #07343f;
+		border: 2px solid #086c84;
+		border-radius: 8px;
+	}
+	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton:hover{
+		animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+		background: #af0000;
+		border: 2px solid #f00;
+	}
+	.subdomainAccountSettings .heading, .subdomainAccountSettings .profileMessage{
+		color: #f8f9fa;
+		margin: 0 0 20px;
+	}
+	.textInput.disabled input{
+		background: transparent;
+		color: #f8f9fa !important;
+		-webkit-text-fill-color: #f8f9fa !important;
+	}
+	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton span{
+		font-size: 20px;
+		color: #f8f9fa;
+	}
 }
 
 /* WIP?? Might touch the forums with layout stuff */
 /* @-moz-document domain("ask.vrchat.com") {
 	html body #main-outlet, .wrap{
-		max-width: 80%;
+		max-width: 1600px;
+		width: 80%;
 	}
 	video{
 		max-height: none;
