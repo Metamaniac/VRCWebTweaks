@@ -1,13 +1,33 @@
+/*
+ ██▒   █▓ ██▀███   ▄████▄   ██░ ██  ▄▄▄     ▄▄▄█████▓     █     █░ ▓█████ ▄▄▄▄   ▄▄▄█████▓ █     █░ ▓█████ ▄▄▄      ██ ▄█▀  ██████ 
+▓██░   █▒▓██ ▒ ██▒▒██▀ ▀█ ▒▓██░ ██ ▒████▄   ▓  ██▒ ▓▒    ▓█░ █ ░█░ ▓█   ▀▓█████▄ ▓  ██▒ ▓▒▓█░ █ ░█░ ▓█   ▀▒████▄    ██▄█▒ ▒██    ▒ 
+ ▓██  █▒░▓██ ░▄█ ▒▒▓█    ▄░▒██▀▀██ ▒██  ▀█▄ ▒ ▓██░ ▒░    ▒█░ █ ░█  ▒███  ▒██▒ ▄██▒ ▓██░ ▒░▒█░ █ ░█  ▒███  ▒██  ▀█▄ ▓███▄░ ░ ▓██▄   
+  ▒██ █░░▒██▀▀█▄  ▒▓▓▄ ▄██ ░▓█ ░██ ░██▄▄▄▄██░ ▓██▓ ░     ░█░ █ ░█  ▒▓█  ▄▒██░█▀  ░ ▓██▓ ░ ░█░ █ ░█  ▒▓█  ▄░██▄▄▄▄██▓██ █▄   ▒   ██▒
+   ▒▀█░  ░██▓ ▒██▒▒ ▓███▀  ░▓█▒░██▓▒▓█   ▓██  ▒██▒ ░     ░░██▒██▓ ▒░▒████░▓█  ▀█▓  ▒██▒ ░ ░░██▒██▓ ▒░▒████▒▓█   ▓██▒██▒ █▄▒██████▒▒
+   ░ ▐░  ░ ▒▓ ░▒▓░░ ░▒ ▒    ▒ ░░▒░▒░▒▒   ▓▒█  ▒ ░░       ░ ▓░▒ ▒  ░░░ ▒░ ░▒▓███▀▒  ▒ ░░   ░ ▓░▒ ▒  ░░░ ▒░ ░▒▒   ▓▒█▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░
+   ░ ░░    ░▒ ░ ▒░  ░  ▒    ▒ ░▒░ ░░ ░   ▒▒     ░          ▒ ░ ░  ░ ░ ░  ▒░▒   ░     ░      ▒ ░ ░  ░ ░ ░  ░ ░   ▒▒ ░ ░▒ ▒░░ ░▒  ░ ░
+     ░░     ░   ░ ░         ░  ░░ ░  ░   ▒    ░            ░   ░      ░   ░    ░   ░ ░      ░   ░      ░    ░   ▒  ░ ░░ ░ ░  ░  ░  
+      ░     ░     ░ ░       ░  ░  ░      ░                   ░    ░   ░   ░                   ░    ░   ░        ░  ░  ░         ░  
+*/
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.0.5
+@version		0.0.6
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
 @author			Metamaniac (Table)
 @preprocessor	stylus
-@var select		customFont	"Font Override"	["Dosis*", "inherit"]
+@var select		customFont			"Font Override"				["Dosis*", "inherit"]
+@var color		accentColor			"Accent Color"				#eb8500
+@var color		fauxWhite			"Faux White"				#f8f9fa
+@var color		moreDarkGreen		"Dark Green"				#07242b
+@var color		lessDarkGreen		"Less Dark Green"			#07343f
+@var color		moreDarkGreenBorder	"Dark Green Border"			#053c48
+@var color		lessDarkGreenBorder	"Less Dark Green Border"	#086c84
+@var color		blueText			"Blue Text"					#6ae3f9
+@var color		moreDarkGrey		"More Dark Grey"			#181b1f
+@var color		lessDarkGrey		"Less Dark Grey"			#252a30
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
@@ -18,14 +38,23 @@
 	40%, 60% {transform: translate3d(4px, 0, 0);}
 }
 @-moz-document domain("vrchat.com") {
-	body{
-		font-family: customFont, sans-serif;
+	body, h1, h2, h3, h4, h5, h6{
+		font-family: customFont, sans-serif !important;
 	}
 }
 
 @-moz-document domain("feedback.vrchat.com") {
-	
-	/* ~~~~ BASE ~~~~ */
+
+/*
+
+██████╗  █████╗ ███████╗███████╗
+██╔══██╗██╔══██╗██╔════╝██╔════╝
+██████╔╝███████║███████╗█████╗
+██╔══██╗██╔══██║╚════██║██╔══╝
+██████╔╝██║  ██║███████║███████╗
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+*/
 
 	body, html{
 		background: #0e1013;
@@ -39,7 +68,16 @@
 	}
 
 
-	/* ~~~~ HOME ~~~~ */
+/*
+
+██╗  ██╗ ██████╗ ███╗   ███╗███████╗
+██║  ██║██╔═══██╗████╗ ████║██╔════╝
+███████║██║   ██║██╔████╔██║█████╗
+██╔══██║██║   ██║██║╚██╔╝██║██╔══╝
+██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+
+*/
 
 	.subdomainHome .contentInnerContainer{
 		max-width: 1600px;
@@ -48,13 +86,13 @@
 	.boardGridItem{
 		height: 10vh;
 		max-height: 110px;
-		background: #07242b;
-		border: 2px solid #053c48;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
 		border-radius: 8px;
 	}
 	.boardGridItem:hover{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 		transform: scale(1.05);
 	}
 	.boardGridItem .top{
@@ -63,7 +101,10 @@
 	.boardGridItem .top .name{
 		font-size: 200%;
 		line-height: 100%;
-		color: #6ae3f9;
+		color: blueText;
+	}
+	.boardGridItem .uppercaseHeader{
+		font-size: inherit;
 	}
 	.publicNav .publicNavContent .secondaryNav .search{
 		margin-left: 0;
@@ -76,12 +117,12 @@
 		margin: 0 0 0 85px;
 	}
 	.globalSearch .textInput{
-		background: #07242b;
-		border: 2px solid #053c48;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
 		border-radius: 8px;
 	}
 	.globalSearch .textInput .inputContainer input, .globalSearch .globalSearchInput .inset .icon, .globalSearch .globalSearchInput.focused .inset .icon, .globalSearch .globalSearchInput.populated .inset .icon, .globalSearch .uppercaseHeader{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.globalSearch .globalSearchInput.focused .inputContainer, .globalSearch .globalSearchInput.populated .inputContainer{
 		width: 400px;
@@ -97,25 +138,43 @@
 		color: #888;
 	}
 	.postList .noPosts{
-		color: #f8f9fa;
+		color: fauxWhite;
 		font-size: 25px;
 		text-align: center;
 	}
 
 
 
-	/* ~~~~ TOPBAR ~~~~ */
+/*
+
+████████╗ ██████╗ ██████╗     ██████╗  █████╗ ██████╗
+╚══██╔══╝██╔═══██╗██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗
+   ██║   ██║   ██║██████╔╝    ██████╔╝███████║██████╔╝
+   ██║   ██║   ██║██╔═══╝     ██╔══██╗██╔══██║██╔══██╗
+   ██║   ╚██████╔╝██║         ██████╔╝██║  ██║██║  ██║
+   ╚═╝    ╚═════╝ ╚═╝         ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+*/
 
 	.contentContainer .contentInnerContainer{
 		max-width: 1600px;
 		width: 80%;
 	}
 	.publicNav{
-		background: linear-gradient(0deg, #07242b 0%, #07343f 100%) !important;
-		border-bottom: 3px solid #053c48;
+		background: linear-gradient(0deg, moreDarkGreen 0%, lessDarkGreen 100%) !important;
+		border-bottom: 3px solid moreDarkGreenBorder;
 	}
 
-	/* TOP LEFT */
+/*
+
+█▀▀██▀▀█                     ▀██▀                ▄▀█▄   ▄
+   ██      ▄▄▄   ▄▄▄ ▄▄▄      ██         ▄▄▄▄  ▄██▄   ▄██▄
+   ██    ▄█  ▀█▄  ██▀  ██     ██       ▄█▄▄▄██  ██     ██
+   ██    ██   ██  ██    █     ██       ██       ██     ██
+  ▄██▄    ▀█▄▄█▀  ██▄▄▄▀     ▄██▄▄▄▄▄█  ▀█▄▄▄▀ ▄██▄    ▀█▄▀
+                  ██
+                 ▀▀▀▀
+*/
 	.companyLogo{
 		background-image: url("https://assets.vrchat.com/www/brand/vrchat-logo-white-transparent-crop-background.png");
 		background-size: auto 90%;
@@ -128,10 +187,10 @@
 		display: none;
 	}
 	.publicNav .publicNavContent .secondaryNav .link .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .left{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.publicNav .publicNavContent .secondaryNav .link:hover .text, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .dropdownContainer .selection .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .selection:not(.split) .icon-chevron-down, .publicNav .publicNavContent .secondaryNav .link.activeLink .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .icon-chevron-down:hover{
-		color: #eb8500 !important;
+		color: accentColor !important;
 	}
 	.publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div{
 		border-right: 0;
@@ -146,32 +205,50 @@
 	}
 	
 
-	/* DROPDOWN */
+/*
+
+▀██▀▀█▄                                ▀██
+ ██   ██  ▄▄▄ ▄▄    ▄▄▄   ▄▄▄ ▄▄▄    ▄▄ ██    ▄▄▄   ▄▄▄ ▄▄▄ ▄▄▄ ▄▄ ▄▄▄
+ ██    ██  ██▀ ▀▀ ▄█  ▀█▄  ██▀  ██ ▄▀  ▀██  ▄█  ▀█▄  ██  ██  █   ██  ██
+ ██    ██  ██     ██   ██  ██    █ █▄   ██  ██   ██   ███ ███    ██  ██
+▄██▄▄▄█▀  ▄██▄     ▀█▄▄█▀  ██▄▄▄▀  ▀█▄▄▀██▄  ▀█▄▄█▀    █   █    ▄██▄ ██▄
+                           ██
+                          ▀▀▀▀
+*/
 	.dropdownPortal .dropdown{
 		max-height: none;
-		background: #07343f !important;
+		background: lessDarkGreen !important;
 	}
 	.boardDropdownSelector .dropdown .option .optionContent{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.dropdownPortal .dropdown .option.focused{
-		background: #07242b;
+		background: moreDarkGreen;
 		border-radius: 0;
 		outline: 0;
 	}
 	.dropdownPortal .dropdown.controlled .option:hover{
-		background: #07242b;
+		background: moreDarkGreen;
 		border-radius: 0;
 	}
 	.boardDropdownSelector .dropdown .option .optionContent .count{
 		background: transparent;
-		color: #eb8500;
+		color: accentColor;
 	}
 	.dropdown a{
 		transition: all .075s ease-in-out;
 	}
 
-	/* TOP RIGHT */
+/*
+
+█▀▀██▀▀█                     ▀██▀▀█▄    ██          ▀██        ▄
+   ██      ▄▄▄   ▄▄▄ ▄▄▄      ██   ██  ▄▄▄    ▄▄▄ ▄  ██ ▄▄   ▄██▄
+   ██    ▄█  ▀█▄  ██▀  ██     ██▀▀█▀    ██   ██ ██   ██▀ ██   ██
+   ██    ██   ██  ██    █     ██   █▄   ██    █▀▀    ██  ██   ██
+  ▄██▄    ▀█▄▄█▀  ██▄▄▄▀     ▄██▄  ▀█▀ ▄██▄  ▀████▄ ▄██▄ ██▄  ▀█▄▀
+                  ██                        ▄█▄▄▄▄▀
+                 ▀▀▀▀
+*/
 	.publicNav .publicNavContent .mainNav .rightContainer{
 		padding: 35px 0 0 0;
 	}
@@ -183,30 +260,48 @@
 		border-radius: 30%;
 	}
 	.adminNavAccountMenuPortal .menuItems{
-		background: #07343f;
+		background: lessDarkGreen;
 		box-shadow: 0 0 10px #00000033;
 	}
 	.adminNavAccountMenuPortal .menuItems .section .menuItem{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.adminNavAccountMenuPortal .arrow{
-		border-color: #07343f;
+		border-color: lessDarkGreen;
 	}
 	.adminNavAccountMenuPortal .menuItems .section .menuItem:hover{
-		color: #6ae3f9;
+		color: blueText;
 	}
 	.tooltipContainer .tooltip{
 		display: none;
-		background: #07343f;
+		background: lessDarkGreen;
 	}
 	.tooltipContainer .tooltip .arrow{
-		border-color: transparent #07343f #07343f transparent;
+		border-color: transparent lessDarkGreen lessDarkGreen transparent;
 	}
 
 
-	/* ~~~~ NOTIFICATIONS ~~~~ */
+/*
 
-	/* TOP BAR */
+███╗   ██╗ ██████╗ ████████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
+████╗  ██║██╔═══██╗╚══██╔══╝██║██╔════╝██║██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+██╔██╗ ██║██║   ██║   ██║   ██║█████╗  ██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+██║╚██╗██║██║   ██║   ██║   ██║██╔══╝  ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
+██║ ╚████║╚██████╔╝   ██║   ██║██║     ██║╚██████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
+╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+*/
+
+/*
+
+█▀▀██▀▀█                     ▀██▀▀█▄
+   ██      ▄▄▄   ▄▄▄ ▄▄▄      ██   ██   ▄▄▄▄   ▄▄▄ ▄▄
+   ██    ▄█  ▀█▄  ██▀  ██     ██▀▀▀█▄  ▀▀ ▄██   ██▀ ▀▀
+   ██    ██   ██  ██    █     ██    ██ ▄█▀ ██   ██
+  ▄██▄    ▀█▄▄█▀  ██▄▄▄▀     ▄██▄▄▄█▀  ▀█▄▄▀█▀ ▄██▄
+                  ██
+                 ▀▀▀▀
+*/
 	.notificationsMenu{
 		margin: 0 10px 0 0;
 	}
@@ -215,48 +310,56 @@
 	}
 	.notificationsMenuPortal .notificationsDropdown{
 		border-radius: 10px;
-		background: #07242b;
-		border: 2px solid #053c48;
-		color: #f8f9fa;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
+		color: fauxWhite;
 	}
 	.notificationsDropdownHeader h3{
 		color: inherit;
 		font-size: 15px;
 	}
 	.notificationsDropdownHeader span{
-		color: #ed6700 !important;
+		color: accentColor !important;
 	}
 	.notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader{
-		border-bottom: 2px solid #053c48;
+		border-bottom: 2px solid moreDarkGreenBorder;
 	}
 	.notificationsMenuPortal .notificationsDropdown .notificationsDropdownFooter{
-		border-top: 2px solid #053c48;
+		border-top: 2px solid moreDarkGreenBorder;
 	}
 	.notification.unread{
-		border-left: 2px solid #ed6700;
+		border-left: 2px solid accentColor;
 	}
 	.notification:hover{
-		background: #07343f;
+		background: lessDarkGreen;
 	}
 	.notificationsMenuPortal .notificationsDropdown::after{
-		border-color: transparent transparent #053c48 #053c48;
+		border-color: transparent transparent moreDarkGreenBorder moreDarkGreenBorder;
 		top: 0px;
 	}
 
-	/* DEDICATED PAGE */
+/*
+
+▀██▀▀█▄               ▀██   ██                    ▄               ▀██     ▀██▀▀█▄
+ ██   ██    ▄▄▄▄    ▄▄ ██  ▄▄▄    ▄▄▄▄   ▄▄▄▄   ▄██▄    ▄▄▄▄    ▄▄ ██      ██   ██  ▄▄▄▄     ▄▄▄ ▄   ▄▄▄▄
+ ██    ██ ▄█▄▄▄██ ▄▀  ▀██   ██  ▄█   ▀▀ ▀▀ ▄██   ██   ▄█▄▄▄██ ▄▀  ▀██      ██▄▄▄█▀ ▀▀ ▄██   ██ ██  ▄█▄▄▄██
+ ██    ██ ██      █▄   ██   ██  ██      ▄█▀ ██   ██   ██      █▄   ██      ██      ▄█▀ ██    █▀▀   ██
+▄██▄▄▄█▀   ▀█▄▄▄▀ ▀█▄▄▀██▄ ▄██▄  ▀█▄▄▄▀ ▀█▄▄▀█▀  ▀█▄▀  ▀█▄▄▄▀ ▀█▄▄▀██▄    ▄██▄     ▀█▄▄▀█▀  ▀████▄  ▀█▄▄▄▀
+                                                                                           ▄█▄▄▄▄▀
+*/
 	.subdomainNotifications .notificationHeader .heading{
 		font-size: 30px;
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.subdomainNotifications .notificationHeader .markAll{
 		font-size: 20px;
-		color: #ed6700;
+		color: accentColor;
 	}
 	.notificationList .notificationListBody{
 		border-radius: 10px;
-		background: #07242b;
-		border: 2px solid #053c48;
-		color: #f8f9fa;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
+		color: fauxWhite;
 	}
 	.notificationsDropdown .postLink .notification span{
 		font-size: 18px;
@@ -270,22 +373,31 @@
 
 
 
-	/* ~~~~ POST LIST ~~~~ */
+/*
+
+██████╗  ██████╗ ███████╗████████╗    ██╗     ██╗███████╗████████╗
+██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝    ██║     ██║██╔════╝╚══██╔══╝
+██████╔╝██║   ██║███████╗   ██║       ██║     ██║███████╗   ██║
+██╔═══╝ ██║   ██║╚════██║   ██║       ██║     ██║╚════██║   ██║
+██║     ╚██████╔╝███████║   ██║       ███████╗██║███████║   ██║
+╚═╝      ╚═════╝ ╚══════╝   ╚═╝       ╚══════╝╚═╝╚══════╝   ╚═╝
+
+*/
 
 	.boardHome .contentInnerContainer{
 		max-width: 1750px;
 		width: 90%;
 	}
 	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
-		background: #181b1f;
+		background: moreDarkGrey;
 		border-radius: 10px;
 	}
 	.postListMenu .menu .selector .dropdown .categories .option:hover, .postListMenu .menu .selector .dropdown .filters .option:hover, .postListMenu .menu .selector .dropdown .sorts .option:hover{
 		background: #000;
 	}
 	.postList .topContainer{
-		background: #252a30;
-		color: #f8f9fa;
+		background: lessDarkGrey;
+		color: fauxWhite;
 		border-radius: 10px 10px 0 0;
 	}
 	.posts{
@@ -296,10 +408,10 @@
 		text-shadow: 0 0 4px #000;
 	}
 	.postListItem .postLink .body .postDetails{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.postCommentCount .icon-comment, .postCommentCount span{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.postList .topContainer .postListMenu{
 		margin: 0;
@@ -311,83 +423,91 @@
 		font-size: 20px;
 	}
 	.postListMenu .menu .selector .dropdown{
-		background: #181b1f;
+		background: moreDarkGrey;
 		box-shadow: 0 0 10px #000;
 	}
 	.searchContainer{
-		border: 2px solid #053c48 !important;
+		border: 2px solid moreDarkGreenBorder !important;
 		border-radius: 8px;
 	}
 	.searchContainer .textInput .inputContainer input{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.postListMenu .searchContainer .searchInputContents{
-		background: #07242b;
+		background: moreDarkGreen;
 	}
 	.postListMenu .searchContainer{
 		margin: 11px;
 	}
 	.postListMenu .searchContainer.active{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 	}
 	.suggestedPosts .heading, .searching{
-		background: #252a30;
+		background: lessDarkGrey;
 		border-radius: 10px 10px 0 0;
-		color: #f8f9fa;
+		color: fauxWhite;
 		text-align: center;
 		font-size: 25px !important;
 	}
 	.postVotes{
 		border-radius: 10px 10px 0 0;
-		background: #07242b;
-		border: 2px solid #053c48;
-		color: #f8f9fa;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
+		color: fauxWhite;
 		text-align: center;
 		font-size: 25px !important
 	}
 	.postVotes:hover{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 	}
 	
 	.postVotes .upvote, .postVotes:hover .upvote:not(.voted){
-		border-bottom: 9px solid #f8f9fa;
+		border-bottom: 9px solid fauxWhite;
 	}
 	.postVotes .upvote.voted{
-		border-bottom: 9px solid #ed6700 !important;
+		border-bottom: 9px solid accentColor !important;
 	}
 	
 	
-	/* CREATE POST */
+/*
+
+  ▄▄█▀▀▀▄█                           ▄              ▀██▀▀█▄                   ▄
+▄█▀     ▀  ▄▄▄ ▄▄    ▄▄▄▄   ▄▄▄▄   ▄██▄    ▄▄▄▄      ██   ██   ▄▄▄    ▄▄▄▄  ▄██▄
+██          ██▀ ▀▀ ▄█▄▄▄██ ▀▀ ▄██   ██   ▄█▄▄▄██     ██▄▄▄█▀ ▄█  ▀█▄ ██▄ ▀   ██
+▀█▄      ▄  ██     ██      ▄█▀ ██   ██   ██          ██      ██   ██ ▄ ▀█▄▄  ██
+ ▀▀█▄▄▄▄▀  ▄██▄     ▀█▄▄▄▀ ▀█▄▄▀█▀  ▀█▄▀  ▀█▄▄▄▀    ▄██▄      ▀█▄▄█▀ █▀▄▄█▀  ▀█▄▀
+
+*/
 	.boardHome .sidebarContainer{
 		width: inherit;
 		max-width: 450px;
 	}
 	.boardDetails{
 		max-height: none;
-		background: #07242b;
-		border: 2px solid #053c48;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
 		border-radius: 8px;
-		color: #6ae3f9;
+		color: blueText;
 	}
 	.boardDetails .heading{
 		font-size: 22px;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input{
-		color: #f8f9fa !important;
+		color: fauxWhite !important;
 	}
 	.boardDetails .createPostForm .fileInputButton{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 		border-radius: 8px;
 	}
 	.fileInput .fileInputButton .icon{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 
 	.createPostForm .categoryDropdownContainer{
@@ -397,31 +517,48 @@
 		color: inherit;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
-		background: #07242b;
-		border: 2px solid #053c48;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
 	}
 	.categorySelector.floatingMenu .categoryInput .textInput{
-		background: #07242b;
+		background: moreDarkGreen;
 		border-bottom: none;
 	}
 	.categorySelector.floatingMenu .categoryInput .textInput.focused{
-		border-bottom: 2px solid #053c48;
+		border-bottom: 2px solid moreDarkGreenBorder;
 	}
 	.categorySelector.floatingMenu .categoryInput .suggestions{
 		max-height: 240px;
-		background: #07242b;
+		background: moreDarkGreen;
 	}
 	.categorySelector .categoryInput .suggestions .suggestion:hover{
 		background: #04191e;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
-		background: #07343f;
+		background: lessDarkGreen;
 	}
 
 
-	/* ~~~~ INDIVIDUAL POST ~~~~ */
+/*
 
-	/* GENERIC */
+██╗███╗   ██╗██████╗ ██╗██╗   ██╗██╗██████╗ ██╗   ██╗ █████╗ ██╗         ██████╗  ██████╗ ███████╗████████╗
+██║████╗  ██║██╔══██╗██║██║   ██║██║██╔══██╗██║   ██║██╔══██╗██║         ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝
+██║██╔██╗ ██║██║  ██║██║██║   ██║██║██║  ██║██║   ██║███████║██║         ██████╔╝██║   ██║███████╗   ██║
+██║██║╚██╗██║██║  ██║██║╚██╗ ██╔╝██║██║  ██║██║   ██║██╔══██║██║         ██╔═══╝ ██║   ██║╚════██║   ██║
+██║██║ ╚████║██████╔╝██║ ╚████╔╝ ██║██████╔╝╚██████╔╝██║  ██║███████╗    ██║     ╚██████╔╝███████║   ██║
+╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═══╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚═╝      ╚═════╝ ╚══════╝   ╚═╝
+
+*/
+
+/*
+
+ ▄▄█▀▀▀▄█                                    ██
+▄█▀     ▀    ▄▄▄▄  ▄▄ ▄▄▄     ▄▄▄▄  ▄▄▄ ▄▄  ▄▄▄    ▄▄▄▄
+██    ▄▄▄▄ ▄█▄▄▄██  ██  ██  ▄█▄▄▄██  ██▀ ▀▀  ██  ▄█   ▀▀
+▀█▄    ██  ██       ██  ██  ██       ██      ██  ██
+ ▀▀█▄▄▄▀█   ▀█▄▄▄▀ ▄██▄ ██▄  ▀█▄▄▄▀ ▄██▄    ▄██▄  ▀█▄▄▄▀
+
+*/
 	.subdomainPost .contentInnerContainer{
 		max-width: 1600px;
 		width: 80%;
@@ -430,17 +567,17 @@
 		max-width: 100%;
 	}
 	.subdomainPost .postContainer{
-		background: #181b1f;
+		background: moreDarkGrey;
 	}
 	.overlayWrapper .overlayContainer .overlay{
-		background: #252a30;
+		background: lessDarkGrey;
 		border: 0;
 	}
 	.userInfo{
 		padding: 0 0 0 10px;
 	}
 	.userLockup .userInfo .name{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.userLockup .userInfo, .userLockup .userInfo .name, .postStatusChange .topContainer .update span{
 		line-height: 36px;
@@ -460,14 +597,23 @@
 		background-color: #000;
 	}
 
-	/* BODY */
+/*
+
+▀██▀▀█▄               ▀██
+ ██   ██    ▄▄▄     ▄▄ ██   ▄▄▄▄ ▄▄▄
+ ██▀▀▀█▄  ▄█  ▀█▄ ▄▀  ▀██    ▀█▄  █
+ ██    ██ ██   ██ █▄   ██     ▀█▄█
+▄██▄▄▄█▀   ▀█▄▄█▀ ▀█▄▄▀██▄     ▀█
+                            ▄▄ █
+                             ▀▀
+*/
 	.post .postContent .commentComposer, .post .postContent .postMenu{
 		padding: 0 88px;
 	}
 	.commentBody .line, .commentBody p, .commentBody span, .postBody .markdown .line, .postActivity .activityList, .postBody{
 		font-size: 18px;
 		line-height: 25px;
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.postHeader .statusTitle .postTitle{
 		color: #fc0;
@@ -486,22 +632,50 @@
 		background-color: transparent;
 	}
 
-	/* COMMENTS */
+/*
+
+  ▄▄█▀▀▀▄█                                                  ▄
+▄█▀     ▀    ▄▄▄   ▄▄ ▄▄ ▄▄   ▄▄ ▄▄ ▄▄     ▄▄▄▄  ▄▄ ▄▄▄   ▄██▄   ▄▄▄▄
+██         ▄█  ▀█▄  ██ ██ ██   ██ ██ ██  ▄█▄▄▄██  ██  ██   ██   ██▄ ▀
+▀█▄      ▄ ██   ██  ██ ██ ██   ██ ██ ██  ██       ██  ██   ██   ▄ ▀█▄▄
+ ▀▀█▄▄▄▄▀   ▀█▄▄█▀ ▄██ ██ ██▄ ▄██ ██ ██▄  ▀█▄▄▄▀ ▄██▄ ██▄  ▀█▄▀ █▀▄▄█▀
+
+*/
+	
 	.post .mainContent > .commentComposer{
 		margin: 0 30px 0 85px;
 		max-width: 100%;
 	}
 	.commentComposer .autoResizeTextarea{
-		background: #07242b;
+		background: moreDarkGreen;
 	}
 	.commentComposer .autoResizeTextarea textarea{
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 	.commentComposer .composerForm{
-		background: #07242b;
+		background: moreDarkGreen;
 		transition: background 0.2s ease-in-out 0s;
-		border: 2px solid #053c48 !important;
+		border: 2px solid moreDarkGreenBorder !important;
 		box-shadow: 0 0 3px #000;
+	}
+	.fileInput .fileInputButton{
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
+		border-radius: 8px;
+		border-style: solid !important;
+	}
+	.fileInput .fileInputButton:hover{
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
+		border-radius: 8px;
+		border-style: solid !important;
+		color: fauxWhite;
+	}
+	.commentComposer .composerForm .buttonBar .imageInput .fileInput div .icon{
+		color: fauxWhite;
+	}
+	.commentComposer .composerForm .buttonBar .imageInput .fileInput div:hover .icon{
+		color: blueText;
 	}
 	.commentComposer .composerForm .buttonBar{
 		border-top: none;
@@ -510,7 +684,7 @@
 		border-radius: 5px 5px 0 0;
 	}
 	.postMerge .bottomContainer .mergeContainer{
-		background: #252a30;
+		background: lessDarkGrey;
 		border: 0;
 		box-shadow: 0 0 10px #000;
 	}
@@ -521,20 +695,29 @@
 	}
 	.reactionsMenu .reactors .more button{
 		background-color: transparent;
-		color: #ed6700;
+		color: accentColor;
 	}
 	.modal{
-		background: linear-gradient(0deg, #07242b 0%, #07343f 100%);
+		background: linear-gradient(0deg, moreDarkGreen 0%, lessDarkGreen 100%);
 		box-shadow: 0 0 50px #000;
 	}
 
 
-	/* ~~~~ VOTERS ~~~~ */
+/*
+
+██╗   ██╗ ██████╗ ████████╗███████╗██████╗ ███████╗
+██║   ██║██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗██╔════╝
+██║   ██║██║   ██║   ██║   █████╗  ██████╔╝███████╗
+╚██╗ ██╔╝██║   ██║   ██║   ██╔══╝  ██╔══██╗╚════██║
+ ╚████╔╝ ╚██████╔╝   ██║   ███████╗██║  ██║███████║
+  ╚═══╝   ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝
+
+*/
 
 	.subdomainPost .sidebarSection{
 		max-height: none;
-		background: #07242b !important;
-		border: 2px solid #053c48 !important;
+		background: moreDarkGreen !important;
+		border: 2px solid moreDarkGreenBorder !important;
 		border-radius: 8px !important;
 	}
 	.sidebarSection .category{
@@ -542,18 +725,18 @@
 	}
 	.category .label{
 		font-size: 20px !important;
-		color: #6ae3f9;
+		color: blueText;
 	}
 	.subdomainPost .sidebarContainer .uppercaseHeader{
 		color: #0e9bb1;
 	}
 	.subdomainPostVoters .more{
 		margin: 10px 0 0 0;
-		color: #ed6700 !important;
+		color: accentColor !important;
 		text-align: center;
 	}
 	.subdomainPostVotersList .subdomainPostVotersContents{
-		background: #181b1f;
+		background: moreDarkGrey;
 		border: 0;
 	}
 	.subdomainPostVotersList .subdomainPostVoters .users{
@@ -564,21 +747,30 @@
 		max-width: 300px;
 	}
 	.notFound{
-		color: #f8f9fa;
+		color: fauxWhite;
 		font-size: 25px;
 		text-align: center;
 	}
 
 
-	/* ~~~~ SETTINGS ~~~~ */
+/*
+
+███████╗███████╗████████╗████████╗██╗███╗   ██╗ ██████╗ ███████╗
+██╔════╝██╔════╝╚══██╔══╝╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝
+███████╗█████╗     ██║      ██║   ██║██╔██╗ ██║██║  ███╗███████╗
+╚════██║██╔══╝     ██║      ██║   ██║██║╚██╗██║██║   ██║╚════██║
+███████║███████╗   ██║      ██║   ██║██║ ╚████║╚██████╔╝███████║
+╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
+
+*/
 
 	.subdomainAccountSettings, .subdomainAccountSettings .nullState{
-		background: #07242b;
-		border: 2px solid #053c48 !important;
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder !important;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton, .textInput.disabled{
-		background: #07343f;
-		border: 2px solid #086c84;
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
 		border-radius: 8px;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton:hover{
@@ -587,25 +779,27 @@
 		border: 2px solid #f00;
 	}
 	.subdomainAccountSettings .heading, .subdomainAccountSettings .profileMessage{
-		color: #f8f9fa;
+		color: fauxWhite;
 		margin: 0 0 20px;
 	}
 	.textInput.disabled input{
 		background: transparent;
-		color: #f8f9fa !important;
-		-webkit-text-fill-color: #f8f9fa !important;
+		color: fauxWhite !important;
+		-webkit-text-fill-color: fauxWhite !important;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton span{
 		font-size: 20px;
-		color: #f8f9fa;
+		color: fauxWhite;
 	}
 }
 
-/* WIP?? Might touch the forums with layout stuff */
-/* @-moz-document domain("ask.vrchat.com") {
+
+@-moz-document domain("ask.vrchat.com") {
+	:root{
+		--base-font-size: 16px;
+	}
 	html body #main-outlet, .wrap{
 		max-width: 1600px;
-		width: 80%;
 	}
 	video{
 		max-height: none;
@@ -613,4 +807,7 @@
 	.topic-body{
 		width: inherit;
 	}
-} */
+	p{
+		font-size: 18px;
+	}
+}
