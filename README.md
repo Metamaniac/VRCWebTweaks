@@ -8,3 +8,6 @@
 - [Click me!](https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css)
 
 - Hit "Install style" and ensure that you leave "Check for updates" on to not miss any future improvements!
+
+# User Testimonials
+![image](https://user-images.githubusercontent.com/6299186/187008752-70abcf09-32ad-44ce-9a20-237680833835.png)
