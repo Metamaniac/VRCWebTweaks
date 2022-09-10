@@ -12,13 +12,14 @@
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.0.6
+@version		0.0.7
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
 @author			Metamaniac (Table)
 @preprocessor	stylus
 @var select		customFont			"Font Override"				["Dosis*", "inherit"]
+@var checkbox	cursorEnable		"Use VRChat Cursor"			0
 @var color		accentColor			"Accent Color"				#eb8500
 @var color		fauxWhite			"Faux White"				#f8f9fa
 @var color		moreDarkGreen		"Dark Green"				#07242b
@@ -30,6 +31,18 @@
 @var color		lessDarkGrey		"Less Dark Grey"			#252a30
 ==/UserStyle== */
 
+/*
+
+  ▄▄█▀▀▀█▄█▀████▀     ▄▄█▀▀██▄ ▀███▀▀▀██▄     ██     ▀████▀
+▄██▀     ▀█  ██     ▄██▀    ▀██▄ ██    ██    ▄██▄      ██
+██▀       ▀  ██     ██▀      ▀██ ██    ██   ▄█▀██▄     ██
+██           ██     ██        ██ ██▀▀▀█▄▄  ▄█  ▀██     ██
+██▄    ▀████ ██     ▄█▄      ▄██ ██    ▀█  ████████    ██     ▄
+▀██▄     ██  ██    ▄███▄    ▄██▀ ██    ▄█ █▀      ██   ██    ▄█
+  ▀▀█████████████████ ▀▀████▀▀ ▄████████▄███▄   ▄████▄█████████
+
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @keyframes shake {
 	10%, 90% {transform: translate3d(-1px, 0, 0);}
@@ -37,13 +50,43 @@
 	30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
 	40%, 60% {transform: translate3d(4px, 0, 0);}
 }
-@-moz-document domain("vrchat.com") {
+@keyframes rumble {
+	10% {transform: translate(2px, 0px) rotate(-2deg);}
+	20% {transform: translate(1px, -1px) rotate(1deg);}
+	30% {transform: translate(-1px, -2px) rotate(0deg);}
+	40% {transform: translate(1px, 1px) rotate(2deg);}
+	50% {transform: translate(-2px, 0px) rotate(-1deg);}
+	60% {transform: translate(-1px, 1px) rotate(3deg);}
+	70% {transform: translate(1px, -2px) rotate(0deg);}
+	80% {transform: translate(2px, 1px) rotate(-2deg);}
+}
+@-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
 	body, h1, h2, h3, h4, h5, h6{
 		font-family: customFont, sans-serif !important;
 	}
+
+if cursorEnable{
+	body, html{
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png"), auto;
+	}
+	a, .buttonStyle, button, .authButton{
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png"), auto;
+	}
+}
 }
 
-@-moz-document domain("feedback.vrchat.com") {
+/*
+
+  ▄▄█▀▀▀█▄█     ██     ▀███▄   ▀███▀███▄   ▀███▀███▀   ▀██▀
+▄██▀     ▀█    ▄██▄      ███▄    █   ███▄    █   ███   ▄█
+██▀       ▀   ▄█▀██▄     █ ███   █   █ ███   █    ███ ▄█
+██           ▄█  ▀██     █  ▀██▄ █   █  ▀██▄ █     ████
+██▄          ████████    █   ▀██▄█   █   ▀██▄█      ██
+▀██▄     ▄▀ █▀      ██   █     ███   █     ███      ██
+  ▀▀█████▀▄███▄   ▄████▄███▄    ██ ▄███▄    ██    ▄████▄
+
+*/
+@-moz-document domain("feedback.vrchat.com"), domain("vrchat.canny.io") {
 
 /*
 
@@ -321,6 +364,15 @@
 	.notificationsDropdownHeader span{
 		color: accentColor !important;
 	}
+	.publicNav .publicNavContent .mainNav .rightContainer .notificationsMenu .menu.hasUnread .badge{
+		background: #ed2b2b !important;
+		color: #fff;
+		padding: 2px 6px;
+		right: -8px;
+		top: -8px;
+		border-radius: 50%;
+		font-size: 15px;
+	}
 	.notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader{
 		border-bottom: 2px solid moreDarkGreenBorder;
 	}
@@ -596,6 +648,43 @@
 	.markdown .inlineCodeBlock{
 		background-color: #000;
 	}
+	.markdown a{
+		color: blueText !important;
+	}
+	.markdown a:hover{
+		opacity: .65;
+	}
+	.editing .composerForm .buttonBar .rightContainer .blackButton, .subdomainPost .editContainer .formButtons button, .confirmModal .cannyButton, .errorModal .cannyButton, .commentComposer .blackButton{
+		background: #206eff !important;
+		border: 2px solid #206eff;
+		border-radius: 8px;
+	}
+	.editing .composerForm .buttonBar .rightContainer .blackButton:hover, .subdomainPost .editContainer .formButtons button:hover, .confirmModal .cannyButton:hover, .errorModal .cannyButton:hover, .commentComposer .blackButton:hover{
+		background: #0043a8 !important;
+		border: 2px solid #206eff;
+		/* TODO: GREEN TINT???
+		background: #00a862 !important;
+		border: 2px solid #20ff9e;
+		*/
+		opacity: 1 !important;
+	}
+	.commentComposer .composerForm .buttonBar .rightContainer .cancelButton, .confirmModal .ghostButton{
+		background: #0a1e20;
+		border: 2px solid #0a1e20;
+		border-radius: 8px;
+	}
+	.commentComposer .composerForm .buttonBar .rightContainer .cancelButton:hover, .confirmModal .ghostButton:hover{
+		background: #6e0000;
+		border: 2px solid #f00;
+	}
+	.commentComposer .buttonStyle.ghostButton .label, button.ghostButton .label, .confirmModal .ghostButton .label{
+		color: #fff;
+	}
+	.notFound{
+		color: fauxWhite;
+		font-size: 25px !important;
+		text-align: center;
+	}
 
 /*
 
@@ -631,6 +720,42 @@
 	.markdown .multiLineCodeBlock{
 		background-color: transparent;
 	}
+	/* TODO: FIX HEIGHT BUG SOMEHOW WHEN BRAIN NOT DEAD
+	.commentComposer .composerForm .autoResizeTextarea{
+		height: 88px ;
+	}
+	*/
+	.subdomainPost .editContainer .formContainer{
+		background: moreDarkGreen;
+		border: 2px solid moreDarkGreenBorder;
+		color: fauxWhite;
+	}
+	.subdomainPost .editContainer .formContainer h1{
+		font-size: 20px;
+	}
+	.createPostFormImages .imagePreview .icon{
+		background: #f008;
+	}
+	.createPostFormImages .imagePreview .icon:hover{
+		background: #f00;
+	}
+	.postMenu .timestamp:hover{
+		color: accentColor;
+	}
+	.postMenu .editLink:hover{
+		color: #ff7200;
+	}
+	.postMenu .deleteLink:hover{
+		color: #f00;
+		-webkit-animation: rumble .3s infinite linear;
+	}
+	.confirmModal .message, .errorModal .message{
+		color: fauxWhite;
+	}
+	.photoViewer img.currentImage{
+		filter: drop-shadow(0px 0px 20px #000);
+	}
+
 
 /*
 
@@ -746,11 +871,6 @@
 	.subdomainPostVotersList .subdomainPostVoters .users .voter{
 		max-width: 300px;
 	}
-	.notFound{
-		color: fauxWhite;
-		font-size: 25px;
-		text-align: center;
-	}
 
 
 /*
@@ -791,9 +911,48 @@
 		font-size: 20px;
 		color: fauxWhite;
 	}
+
+/*
+
+██╗      ██████╗  ██████╗ ██╗███╗   ██╗
+██║     ██╔═══██╗██╔════╝ ██║████╗  ██║
+██║     ██║   ██║██║  ███╗██║██╔██╗ ██║
+██║     ██║   ██║██║   ██║██║██║╚██╗██║
+███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
+╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
+
+*/
+
+	.boardLoginForm, .boardLoginForm .topContainer .primaryLogIn{
+		background: transparent;
+		color: fauxWhite;
+	}
+	.buttonStyle.cannyButton button.cannyButton .authButton{
+		background: lessDarkGreen;
+		border: 2px solid lessDarkGreenBorder;
+		border-radius: 8px;
+		scale: 120%;
+	}
+	.buttonStyle.cannyButton:hover, button.cannyButton:hover, .authButton:hover{
+		background: lessDarkGreen;
+		opacity: .65;
+	}
+	.authButton .imageContainer{
+		border-right: 0;
+	}
+
 }
 
+/*
+      ██      ▄█▀▀▀█▄█████▀ ▀███▀    ▀███▀▀▀███ ▄▄█▀▀██▄ ▀███▀▀▀██▄ ▀███▀   ▀███▀████▄     ▄███▀▄█▀▀▀█▄█
+     ▄██▄    ▄██    ▀█ ██   ▄█▀        ██    ▀███▀    ▀██▄ ██   ▀██▄ ██       █   ████    ████ ▄██    ▀█
+    ▄█▀██▄   ▀███▄     ██ ▄█▀          ██   █ ██▀      ▀██ ██   ▄██  ██       █   █ ██   ▄█ ██ ▀███▄
+   ▄█  ▀██     ▀█████▄ █████▄          ██▀▀██ ██        ██ ███████   ██       █   █  ██  █▀ ██   ▀█████▄
+   ████████  ▄     ▀██ ██  ███         ██   █ ██▄      ▄██ ██  ██▄   ██       █   █  ██▄█▀  ██ ▄     ▀██
+  █▀      ██ ██     ██ ██   ▀██▄       ██     ▀██▄    ▄██▀ ██   ▀██▄ ██▄     ▄█   █  ▀██▀   ██ ██     ██
+▄███▄   ▄████▄▀█████▀▄████▄   ███▄   ▄████▄     ▀▀████▀▀ ▄████▄ ▄███▄ ▀██████▀▀ ▄███▄ ▀▀  ▄████▄▀█████▀
 
+*/
 @-moz-document domain("ask.vrchat.com") {
 	:root{
 		--base-font-size: 16px;
@@ -805,9 +964,116 @@
 		max-height: none;
 	}
 	.topic-body{
-		width: inherit;
+		width: 100%;
 	}
 	p{
 		font-size: 18px;
+	}
+	.d-header-icons .unread-notifications{
+		background-color: accentColor;
+	}
+	.badge-notification[href]{
+		color: accentColor invert(100%);
+	}
+	.small-action{
+		max-width: none;
+	}
+}
+
+/*
+
+▀████▀  ▀████▀▀ ▄▄█▀▀██▄ ▀████▄     ▄███▀███▀▀▀███▀███▀▀▀██▄      ██       ▄▄█▀▀▀█▄█▀███▀▀▀███
+  ██      ██  ▄██▀    ▀██▄ ████    ████   ██    ▀█  ██   ▀██▄    ▄██▄    ▄██▀     ▀█  ██    ▀█
+  ██      ██  ██▀      ▀██ █ ██   ▄█ ██   ██   █    ██   ▄██    ▄█▀██▄   ██▀       ▀  ██   █
+  ██████████  ██        ██ █  ██  █▀ ██   ██████    ███████    ▄█  ▀██   ██           ██████
+  ██      ██  ██▄      ▄██ █  ██▄█▀  ██   ██   █  ▄ ██         ████████  ██▄    ▀████ ██   █  ▄
+  ██      ██  ▀██▄    ▄██▀ █  ▀██▀   ██   ██     ▄█ ██        █▀      ██ ▀██▄     ██  ██     ▄█
+▄████▄  ▄████▄▄ ▀▀████▀▀ ▄███▄ ▀▀  ▄████▄██████████████▄    ▄███▄   ▄████▄ ▀▀███████▄██████████
+
+*/
+
+@-moz-document domain("hello.vrchat.com") {
+
+/*
+
+██████╗  █████╗ ███████╗███████╗
+██╔══██╗██╔══██╗██╔════╝██╔════╝
+██████╔╝███████║███████╗█████╗
+██╔══██╗██╔══██║╚════██║██╔══╝
+██████╔╝██║  ██║███████║███████╗
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+*/
+
+	/* TODO: Different colors than the other pages??? I don't know how I want to style this yet, will figure out later.
+	:root{
+		--siteBackgroundColor: moreDarkGreen;
+		--paragraphLargeColor: fauxWhite;
+		--paragraphMediumColor: fauxWhite;
+		--paragraphSmallColor: fauxWhite;
+		--tweak-blog-item-title-color: fauxWhite;
+		--headingLargeColor: blueText;
+		--headingMediumColor: blueText;
+		--headingSmallColor: blueText;
+		--paragraphLinkColor: accentColor;
+	}
+	*/
+
+/*
+
+██╗  ██╗ ██████╗ ███╗   ███╗███████╗
+██║  ██║██╔═══██╗████╗ ████║██╔════╝
+███████║██║   ██║██╔████╔██║█████╗
+██╔══██║██║   ██║██║╚██╔╝██║██╔══╝
+██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+
+*/
+
+	footer{
+		text-align: center;
+	}
+	.sqs-cookie-banner-v2-acceptWrapper button:hover{
+		color: #0f0 !important;
+		border-bottom: 1px solid #0f0 !important;
+	}
+	.sqs-cookie-banner-v2-denyWrapper button:hover{
+		color: #f00 !important;
+		border-bottom: 1px solid #f00 !important;
+	}
+
+/*
+
+██████╗ ██╗      ██████╗  ██████╗ ███████╗
+██╔══██╗██║     ██╔═══██╗██╔════╝ ██╔════╝
+██████╔╝██║     ██║   ██║██║  ███╗███████╗
+██╔══██╗██║     ██║   ██║██║   ██║╚════██║
+██████╔╝███████╗╚██████╔╝╚██████╔╝███████║
+╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝
+
+*/
+
+	.blog-single-column--container .image{
+		border-radius: 40px;
+	}
+
+}
+
+/*
+
+ ▄█▀▀▀█▄████▀▀▀███▀███▀▀▀██▄ ▀████▀   ▀███▀███▀▀▀███▀███▀▀▀██▄      ▄█▀▀▀█▄███▀▀██▀▀███     ██     ███▀▀██▀▀██████▀   ▀███▀▄█▀▀▀█▄█
+▄██    ▀█ ██    ▀█  ██   ▀██▄  ▀██     ▄█   ██    ▀█  ██   ▀██▄    ▄██    ▀█▀   ██   ▀█    ▄██▄    █▀   ██   ▀███       █ ▄██    ▀█
+▀███▄     ██   █    ██   ▄██    ██▄   ▄█    ██   █    ██   ▄██     ▀███▄        ██        ▄█▀██▄        ██     ██       █ ▀███▄
+  ▀█████▄ ██████    ███████      ██▄  █▀    ██████    ███████        ▀█████▄    ██       ▄█  ▀██        ██     ██       █   ▀█████▄
+▄     ▀██ ██   █  ▄ ██  ██▄      ▀██ █▀     ██   █  ▄ ██  ██▄      ▄     ▀██    ██       ████████       ██     ██       █ ▄     ▀██
+██     ██ ██     ▄█ ██   ▀██▄     ▄██▄      ██     ▄█ ██   ▀██▄    ██     ██    ██      █▀      ██      ██     ██▄     ▄█ ██     ██
+█▀█████▀▄██████████████▄ ▄███▄     ██     ▄██████████████▄ ▄███▄   █▀█████▀   ▄████▄  ▄███▄   ▄████▄  ▄████▄    ▀██████▀▀ █▀█████▀
+
+*/
+@-moz-document domain("status.vrchat.com") {
+	body.status-page footer{
+		border-top: 0;
+		text-align: center;
+		text-shadow: 0 1px 2px #000;
 	}
 }
