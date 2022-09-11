@@ -67,10 +67,10 @@
 
 if cursorEnable{
 	body, html{
-		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png"), auto;
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto;
 	}
 	a, .buttonStyle, button, .authButton{
-		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png"), auto;
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto;
 	}
 }
 }
