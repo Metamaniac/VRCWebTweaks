@@ -12,23 +12,16 @@
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.0.7
+@version		0.0.8
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
 @author			Metamaniac (Table)
 @preprocessor	stylus
 @var select		customFont			"Font Override"				["Dosis*", "inherit"]
-@var checkbox	cursorEnable		"Use VRChat Cursor"			0
+@var checkbox	cursorEnable		"Use VRChat Cursor"			1
 @var color		accentColor			"Accent Color"				#eb8500
-@var color		fauxWhite			"Faux White"				#f8f9fa
-@var color		moreDarkGreen		"Dark Green"				#07242b
-@var color		lessDarkGreen		"Less Dark Green"			#07343f
-@var color		moreDarkGreenBorder	"Dark Green Border"			#053c48
-@var color		lessDarkGreenBorder	"Less Dark Green Border"	#086c84
-@var color		blueText			"Blue Text"					#6ae3f9
-@var color		moreDarkGrey		"More Dark Grey"			#181b1f
-@var color		lessDarkGrey		"Less Dark Grey"			#252a30
+@var color		postTitle			"Post Titles"				#fc0
 ==/UserStyle== */
 
 /*
@@ -42,7 +35,7 @@
   ▀▀█████████████████ ▀▀████▀▀ ▄████████▄███▄   ▄████▄█████████
 
 */
-
+@-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @keyframes shake {
 	10%, 90% {transform: translate3d(-1px, 0, 0);}
@@ -60,16 +53,27 @@
 	70% {transform: translate(1px, -2px) rotate(0deg);}
 	80% {transform: translate(2px, 1px) rotate(-2deg);}
 }
-@-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
+
+:root{
+	--fauxWhite: #f8f9fa;
+	--blueText: #6ae3f9;
+	--moreDarkGreen: #07242b;
+	--moreDarkGreenBorder: #053c48;
+	--lessDarkGreen: #07343f;
+	--lessDarkGreenBorder: #086c84;
+	--moreDarkGrey: #181b1f;
+	--lessDarkGrey: #252a30;
+}
+
 	body, h1, h2, h3, h4, h5, h6{
 		font-family: customFont, sans-serif !important;
 	}
 
 if cursorEnable{
-	body, html{
+	body, html, label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto;
 	}
-	a, .buttonStyle, button, .authButton{
+	a, .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto;
 	}
 }
@@ -129,13 +133,13 @@ if cursorEnable{
 	.boardGridItem{
 		height: 10vh;
 		max-height: 110px;
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
 		border-radius: 8px;
 	}
 	.boardGridItem:hover{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 		transform: scale(1.05);
 	}
 	.boardGridItem .top{
@@ -144,7 +148,7 @@ if cursorEnable{
 	.boardGridItem .top .name{
 		font-size: 200%;
 		line-height: 100%;
-		color: blueText;
+		color: var(--blueText);
 	}
 	.boardGridItem .uppercaseHeader{
 		font-size: inherit;
@@ -160,12 +164,12 @@ if cursorEnable{
 		margin: 0 0 0 85px;
 	}
 	.globalSearch .textInput{
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
 		border-radius: 8px;
 	}
 	.globalSearch .textInput .inputContainer input, .globalSearch .globalSearchInput .inset .icon, .globalSearch .globalSearchInput.focused .inset .icon, .globalSearch .globalSearchInput.populated .inset .icon, .globalSearch .uppercaseHeader{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.globalSearch .globalSearchInput.focused .inputContainer, .globalSearch .globalSearchInput.populated .inputContainer{
 		width: 400px;
@@ -181,7 +185,7 @@ if cursorEnable{
 		color: #888;
 	}
 	.postList .noPosts{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 		font-size: 25px;
 		text-align: center;
 	}
@@ -204,8 +208,8 @@ if cursorEnable{
 		width: 80%;
 	}
 	.publicNav{
-		background: linear-gradient(0deg, moreDarkGreen 0%, lessDarkGreen 100%) !important;
-		border-bottom: 3px solid moreDarkGreenBorder;
+		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%) !important;
+		border-bottom: 3px solid var(--moreDarkGreenBorder);
 	}
 
 /*
@@ -230,7 +234,7 @@ if cursorEnable{
 		display: none;
 	}
 	.publicNav .publicNavContent .secondaryNav .link .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .left{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.publicNav .publicNavContent .secondaryNav .link:hover .text, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .dropdownContainer .selection .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .left, .publicNav .publicNavContent .secondaryNav .link:hover .boardDropdown .selection:not(.split) .icon-chevron-down, .publicNav .publicNavContent .secondaryNav .link.activeLink .text, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .option .optionContent div, .publicNav .publicNavContent .secondaryNav .link .boardDropdown .dropdownContainer .selection .icon-chevron-down:hover{
 		color: accentColor !important;
@@ -260,18 +264,18 @@ if cursorEnable{
 */
 	.dropdownPortal .dropdown{
 		max-height: none;
-		background: lessDarkGreen !important;
+		background: var(--lessDarkGreen) !important;
 	}
 	.boardDropdownSelector .dropdown .option .optionContent{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.dropdownPortal .dropdown .option.focused{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 		border-radius: 0;
 		outline: 0;
 	}
 	.dropdownPortal .dropdown.controlled .option:hover{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 		border-radius: 0;
 	}
 	.boardDropdownSelector .dropdown .option .optionContent .count{
@@ -303,24 +307,24 @@ if cursorEnable{
 		border-radius: 30%;
 	}
 	.adminNavAccountMenuPortal .menuItems{
-		background: lessDarkGreen;
+		background: var(--lessDarkGreen);
 		box-shadow: 0 0 10px #00000033;
 	}
 	.adminNavAccountMenuPortal .menuItems .section .menuItem{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.adminNavAccountMenuPortal .arrow{
-		border-color: lessDarkGreen;
+		border-color: var(--lessDarkGreen);
 	}
 	.adminNavAccountMenuPortal .menuItems .section .menuItem:hover{
-		color: blueText;
+		color: var(--blueText);
 	}
 	.tooltipContainer .tooltip{
 		display: none;
-		background: lessDarkGreen;
+		background: var(--lessDarkGreen);
 	}
 	.tooltipContainer .tooltip .arrow{
-		border-color: transparent lessDarkGreen lessDarkGreen transparent;
+		border-color: transparent var(--lessDarkGreen) var(--lessDarkGreen) transparent;
 	}
 
 
@@ -353,9 +357,9 @@ if cursorEnable{
 	}
 	.notificationsMenuPortal .notificationsDropdown{
 		border-radius: 10px;
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
-		color: fauxWhite;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
+		color: var(--fauxWhite);
 	}
 	.notificationsDropdownHeader h3{
 		color: inherit;
@@ -374,19 +378,19 @@ if cursorEnable{
 		font-size: 15px;
 	}
 	.notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader{
-		border-bottom: 2px solid moreDarkGreenBorder;
+		border-bottom: 2px solid var(--moreDarkGreenBorder);
 	}
 	.notificationsMenuPortal .notificationsDropdown .notificationsDropdownFooter{
-		border-top: 2px solid moreDarkGreenBorder;
+		border-top: 2px solid var(--moreDarkGreenBorder);
 	}
 	.notification.unread{
 		border-left: 2px solid accentColor;
 	}
 	.notification:hover{
-		background: lessDarkGreen;
+		background: var(--lessDarkGreen);
 	}
 	.notificationsMenuPortal .notificationsDropdown::after{
-		border-color: transparent transparent moreDarkGreenBorder moreDarkGreenBorder;
+		border-color: transparent transparent var(--moreDarkGreenBorder) var(--moreDarkGreenBorder);
 		top: 0px;
 	}
 
@@ -401,7 +405,7 @@ if cursorEnable{
 */
 	.subdomainNotifications .notificationHeader .heading{
 		font-size: 30px;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.subdomainNotifications .notificationHeader .markAll{
 		font-size: 20px;
@@ -409,9 +413,9 @@ if cursorEnable{
 	}
 	.notificationList .notificationListBody{
 		border-radius: 10px;
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
-		color: fauxWhite;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
+		color: var(--fauxWhite);
 	}
 	.notificationsDropdown .postLink .notification span{
 		font-size: 18px;
@@ -441,29 +445,29 @@ if cursorEnable{
 		width: 90%;
 	}
 	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
-		background: moreDarkGrey;
+		background: var(--moreDarkGrey);
 		border-radius: 10px;
 	}
 	.postListMenu .menu .selector .dropdown .categories .option:hover, .postListMenu .menu .selector .dropdown .filters .option:hover, .postListMenu .menu .selector .dropdown .sorts .option:hover{
 		background: #000;
 	}
 	.postList .topContainer{
-		background: lessDarkGrey;
-		color: fauxWhite;
+		background: var(--lessDarkGrey);
+		color: var(--fauxWhite);
 		border-radius: 10px 10px 0 0;
 	}
 	.posts{
 		padding: 2% 2% 0 2%;
 	}
 	.postListItem .postLink .body .postTitle{
-		color: #fc0;
+		color: postTitle;
 		text-shadow: 0 0 4px #000;
 	}
 	.postListItem .postLink .body .postDetails{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.postCommentCount .icon-comment, .postCommentCount span{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.postList .topContainer .postListMenu{
 		margin: 0;
@@ -471,52 +475,69 @@ if cursorEnable{
 	.postListMenu .menu{
 		padding: 15px 25px 15px 25px;
 	}
+	.postListMenu .menu .selector{
+		border-bottom: 0;
+	}
+	.postListMenu .menu .selector:hover{
+		border-bottom: 0;
+		color: accentColor;
+	}
+	.postListMenu .menu .selector .icon-chevron-down{
+		color: inherit;
+		margin: 5px 0 0 5px;
+	}
 	.postListMenu .menu .text, .postListMenu .menu .selector .selectedName, .postListMenu .menu .categoriesMenu .selectedName{
 		font-size: 20px;
 	}
 	.postListMenu .menu .selector .dropdown{
-		background: moreDarkGrey;
+		background: var(--moreDarkGrey);
 		box-shadow: 0 0 10px #000;
+		color: var(--fauxWhite);
+	}
+	.postListMenu .menu .selector .dropdown .sorts{
+		border-right: 3px solid #fff1;
+	}
+	.postListMenu .menu .selector .dropdown .sorts .dot{
+		background: accentColor !important;
 	}
 	.searchContainer{
-		border: 2px solid moreDarkGreenBorder !important;
+		border: 2px solid var(--moreDarkGreenBorder) !important;
 		border-radius: 8px;
 	}
 	.searchContainer .textInput .inputContainer input{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.postListMenu .searchContainer .searchInputContents{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 	}
 	.postListMenu .searchContainer{
 		margin: 11px;
 	}
 	.postListMenu .searchContainer.active{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 	}
 	.suggestedPosts .heading, .searching{
-		background: lessDarkGrey;
+		background: var(--lessDarkGrey);
 		border-radius: 10px 10px 0 0;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 		text-align: center;
 		font-size: 25px !important;
 	}
 	.postVotes{
 		border-radius: 10px 10px 0 0;
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
-		color: fauxWhite;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
+		color: var(--fauxWhite);
 		text-align: center;
 		font-size: 25px !important
 	}
 	.postVotes:hover{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 	}
-	
 	.postVotes .upvote, .postVotes:hover .upvote:not(.voted){
-		border-bottom: 9px solid fauxWhite;
+		border-bottom: 9px solid var(--fauxWhite);
 	}
 	.postVotes .upvote.voted{
 		border-bottom: 9px solid accentColor !important;
@@ -538,28 +559,28 @@ if cursorEnable{
 	}
 	.boardDetails{
 		max-height: none;
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
 		border-radius: 8px;
-		color: blueText;
+		color: var(--blueText);
 	}
 	.boardDetails .heading{
 		font-size: 22px;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input{
-		color: fauxWhite !important;
+		color: var(--fauxWhite) !important;
 	}
 	.boardDetails .createPostForm .fileInputButton{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 		border-radius: 8px;
 	}
 	.fileInput .fileInputButton .icon{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 
 	.createPostForm .categoryDropdownContainer{
@@ -569,25 +590,25 @@ if cursorEnable{
 		color: inherit;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
 	}
 	.categorySelector.floatingMenu .categoryInput .textInput{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 		border-bottom: none;
 	}
 	.categorySelector.floatingMenu .categoryInput .textInput.focused{
-		border-bottom: 2px solid moreDarkGreenBorder;
+		border-bottom: 2px solid var(--moreDarkGreenBorder);
 	}
 	.categorySelector.floatingMenu .categoryInput .suggestions{
 		max-height: 240px;
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 	}
 	.categorySelector .categoryInput .suggestions .suggestion:hover{
 		background: #04191e;
 	}
 	.postCategoryMenu .categoryDropdownContainer{
-		background: lessDarkGreen;
+		background: var(--lessDarkGreen);
 	}
 
 
@@ -619,17 +640,17 @@ if cursorEnable{
 		max-width: 100%;
 	}
 	.subdomainPost .postContainer{
-		background: moreDarkGrey;
+		background: var(--moreDarkGrey);
 	}
 	.overlayWrapper .overlayContainer .overlay{
-		background: lessDarkGrey;
+		background: var(--lessDarkGrey);
 		border: 0;
 	}
 	.userInfo{
 		padding: 0 0 0 10px;
 	}
 	.userLockup .userInfo .name{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.userLockup .userInfo, .userLockup .userInfo .name, .postStatusChange .topContainer .update span{
 		line-height: 36px;
@@ -649,10 +670,19 @@ if cursorEnable{
 		background-color: #000;
 	}
 	.markdown a{
-		color: blueText !important;
+		color: var(--blueText) !important;
 	}
 	.markdown a:hover{
 		opacity: .65;
+	}
+	.markdown ol, .markdown ul{
+		padding-left: 1em;
+	}
+	.markdown ol li, .markdown ul li{
+		font-size: 16px;
+		line-height: 24px;
+		color: #fff;
+		font-weight: 700;
 	}
 	.editing .composerForm .buttonBar .rightContainer .blackButton, .subdomainPost .editContainer .formButtons button, .confirmModal .cannyButton, .errorModal .cannyButton, .commentComposer .blackButton{
 		background: #206eff !important;
@@ -681,7 +711,7 @@ if cursorEnable{
 		color: #fff;
 	}
 	.notFound{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 		font-size: 25px !important;
 		text-align: center;
 	}
@@ -702,10 +732,10 @@ if cursorEnable{
 	.commentBody .line, .commentBody p, .commentBody span, .postBody .markdown .line, .postActivity .activityList, .postBody{
 		font-size: 18px;
 		line-height: 25px;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.postHeader .statusTitle .postTitle{
-		color: #fc0;
+		color: postTitle;
 		text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
 		font-size: 25px;
 		line-height: 30px;
@@ -717,18 +747,23 @@ if cursorEnable{
 	.post .userLockup .userAvatarContainer{
 		margin: 0 10px 0 0;
 	}
+
 	.markdown .multiLineCodeBlock{
 		background-color: transparent;
 	}
+	.markdown .heading{
+		font-size: 22px;
+	}
+
 	/* TODO: FIX HEIGHT BUG SOMEHOW WHEN BRAIN NOT DEAD
 	.commentComposer .composerForm .autoResizeTextarea{
 		height: 88px ;
 	}
 	*/
 	.subdomainPost .editContainer .formContainer{
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
-		color: fauxWhite;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
+		color: var(--fauxWhite);
 	}
 	.subdomainPost .editContainer .formContainer h1{
 		font-size: 20px;
@@ -750,7 +785,7 @@ if cursorEnable{
 		-webkit-animation: rumble .3s infinite linear;
 	}
 	.confirmModal .message, .errorModal .message{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.photoViewer img.currentImage{
 		filter: drop-shadow(0px 0px 20px #000);
@@ -772,35 +807,35 @@ if cursorEnable{
 		max-width: 100%;
 	}
 	.commentComposer .autoResizeTextarea{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 	}
 	.commentComposer .autoResizeTextarea textarea{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.commentComposer .composerForm{
-		background: moreDarkGreen;
+		background: var(--moreDarkGreen);
 		transition: background 0.2s ease-in-out 0s;
-		border: 2px solid moreDarkGreenBorder !important;
+		border: 2px solid var(--moreDarkGreenBorder) !important;
 		box-shadow: 0 0 3px #000;
 	}
 	.fileInput .fileInputButton{
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder);
 		border-radius: 8px;
 		border-style: solid !important;
 	}
 	.fileInput .fileInputButton:hover{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 		border-radius: 8px;
 		border-style: solid !important;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.commentComposer .composerForm .buttonBar .imageInput .fileInput div .icon{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.commentComposer .composerForm .buttonBar .imageInput .fileInput div:hover .icon{
-		color: blueText;
+		color: var(--blueText);
 	}
 	.commentComposer .composerForm .buttonBar{
 		border-top: none;
@@ -809,7 +844,7 @@ if cursorEnable{
 		border-radius: 5px 5px 0 0;
 	}
 	.postMerge .bottomContainer .mergeContainer{
-		background: lessDarkGrey;
+		background: var(--lessDarkGrey);
 		border: 0;
 		box-shadow: 0 0 10px #000;
 	}
@@ -823,8 +858,14 @@ if cursorEnable{
 		color: accentColor;
 	}
 	.modal{
-		background: linear-gradient(0deg, moreDarkGreen 0%, lessDarkGreen 100%);
+		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%);
 		box-shadow: 0 0 50px #000;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.modal .reactors{
+		scrollbar-color: var(--lessDarkGreen) var(--moreDarkGreen);
+		scrollbar-width: thin;
 	}
 
 
@@ -841,8 +882,8 @@ if cursorEnable{
 
 	.subdomainPost .sidebarSection{
 		max-height: none;
-		background: moreDarkGreen !important;
-		border: 2px solid moreDarkGreenBorder !important;
+		background: var(--moreDarkGreen) !important;
+		border: 2px solid var(--moreDarkGreenBorder) !important;
 		border-radius: 8px !important;
 	}
 	.sidebarSection .category{
@@ -850,7 +891,7 @@ if cursorEnable{
 	}
 	.category .label{
 		font-size: 20px !important;
-		color: blueText;
+		color: var(--blueText);
 	}
 	.subdomainPost .sidebarContainer .uppercaseHeader{
 		color: #0e9bb1;
@@ -861,15 +902,18 @@ if cursorEnable{
 		text-align: center;
 	}
 	.subdomainPostVotersList .subdomainPostVotersContents{
-		background: moreDarkGrey;
+		background: var(--moreDarkGrey);
 		border: 0;
 	}
 	.subdomainPostVotersList .subdomainPostVoters .users{
-		display: block;
+		display: inline-block;
 		column-count: 5;
 	}
 	.subdomainPostVotersList .subdomainPostVoters .users .voter{
-		max-width: 300px;
+		width: 300px;
+		display: inline-block;
+		/* if no inline-block, do this instead to make DIFFERENT buggy behavior happen, thanks web browsers!!!
+		break-inside: avoid-column; */
 	}
 
 
@@ -885,12 +929,12 @@ if cursorEnable{
 */
 
 	.subdomainAccountSettings, .subdomainAccountSettings .nullState{
-		background: moreDarkGreen;
-		border: 2px solid moreDarkGreenBorder !important;
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder) !important;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton, .textInput.disabled{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 		border-radius: 8px;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton:hover{
@@ -899,17 +943,17 @@ if cursorEnable{
 		border: 2px solid #f00;
 	}
 	.subdomainAccountSettings .heading, .subdomainAccountSettings .profileMessage{
-		color: fauxWhite;
+		color: var(--fauxWhite);
 		margin: 0 0 20px;
 	}
 	.textInput.disabled input{
 		background: transparent;
-		color: fauxWhite !important;
-		-webkit-text-fill-color: fauxWhite !important;
+		color: var(--fauxWhite) !important;
+		-webkit-text-fill-color: var(--fauxWhite) !important;
 	}
 	.subdomainAccountSettings .settings .editUserAvatar .fileInput .fileInputButton span{
 		font-size: 20px;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 
 /*
@@ -925,16 +969,16 @@ if cursorEnable{
 
 	.boardLoginForm, .boardLoginForm .topContainer .primaryLogIn{
 		background: transparent;
-		color: fauxWhite;
+		color: var(--fauxWhite);
 	}
 	.buttonStyle.cannyButton button.cannyButton .authButton{
-		background: lessDarkGreen;
-		border: 2px solid lessDarkGreenBorder;
+		background: var(--lessDarkGreen);
+		border: 2px solid var(--lessDarkGreenBorder);
 		border-radius: 8px;
 		scale: 120%;
 	}
 	.buttonStyle.cannyButton:hover, button.cannyButton:hover, .authButton:hover{
-		background: lessDarkGreen;
+		background: var(--lessDarkGreen);
 		opacity: .65;
 	}
 	.authButton .imageContainer{
@@ -1007,14 +1051,14 @@ if cursorEnable{
 
 	/* TODO: Different colors than the other pages??? I don't know how I want to style this yet, will figure out later.
 	:root{
-		--siteBackgroundColor: moreDarkGreen;
-		--paragraphLargeColor: fauxWhite;
-		--paragraphMediumColor: fauxWhite;
-		--paragraphSmallColor: fauxWhite;
-		--tweak-blog-item-title-color: fauxWhite;
-		--headingLargeColor: blueText;
-		--headingMediumColor: blueText;
-		--headingSmallColor: blueText;
+		--siteBackgroundColor: var(--moreDarkGreen);
+		--paragraphLargeColor: var(--fauxWhite);
+		--paragraphMediumColor: var(--fauxWhite);
+		--paragraphSmallColor: var(--fauxWhite);
+		--tweak-blog-item-title-color: var(--fauxWhite);
+		--headingLargeColor: var(--blueText);
+		--headingMediumColor: var(--blueText);
+		--headingSmallColor: var(--blueText);
 		--paragraphLinkColor: accentColor;
 	}
 	*/
