@@ -12,7 +12,7 @@
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.0.8
+@version		0.0.9
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
@@ -36,12 +36,13 @@
 
 */
 @-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
+
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @keyframes shake {
-	10%, 90% {transform: translate3d(-1px, 0, 0);}
-	20%, 80% {transform: translate3d(2px, 0, 0);}
-	30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
-	40%, 60% {transform: translate3d(4px, 0, 0);}
+	10%, 90% {transform: translate(-1px, 0);}
+	20%, 80% {transform: translate(2px, 0);}
+	30%, 50%, 70% {transform: translate(-4px, 0);}
+	40%, 60% {transform: translate(4px, 0);}
 }
 @keyframes rumble {
 	10% {transform: translate(2px, 0px) rotate(-2deg);}
@@ -70,11 +71,11 @@
 	}
 
 if cursorEnable{
-	body, html, label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled{
-		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto;
+	body, html, /* CANNY */ label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled, /* MAIN PAGE */ .css-1jz15bg .world, .css-1jz15bg .nav-disabled{
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto !important;
 	}
-	a, .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem{
-		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto;
+	a, /* CANNY */ .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem, /* MAIN PAGE */ .btn, [role="button"], .css-1lj5puh, .css-u6aj87:hover, .css-1hxxm2l, .css-1jz15bg .world-nav:not(.nav-disabled), .css-1jz15bg .world *, input[type="checkbox"]{
+		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto !important;
 	}
 }
 }
@@ -1119,5 +1120,49 @@ if cursorEnable{
 		border-top: 0;
 		text-align: center;
 		text-shadow: 0 1px 2px #000;
+	}
+}
+
+/*
+
+▀████▄     ▄███▀     ██     ▀████▀███▄   ▀███▀   ▀███▀▀▀██▄      ██       ▄▄█▀▀▀█▄█▀███▀▀▀███
+  ████    ████      ▄██▄      ██   ███▄    █       ██   ▀██▄    ▄██▄    ▄██▀     ▀█  ██    ▀█
+  █ ██   ▄█ ██     ▄█▀██▄     ██   █ ███   █       ██   ▄██    ▄█▀██▄   ██▀       ▀  ██   █
+  █  ██  █▀ ██    ▄█  ▀██     ██   █  ▀██▄ █       ███████    ▄█  ▀██   ██           ██████
+  █  ██▄█▀  ██    ████████    ██   █   ▀██▄█       ██         ████████  ██▄    ▀████ ██   █  ▄
+  █  ▀██▀   ██   █▀      ██   ██   █     ███       ██        █▀      ██ ▀██▄     ██  ██     ▄█
+▄███▄ ▀▀  ▄████▄███▄   ▄████▄████▄███▄    ██     ▄████▄    ▄███▄   ▄████▄ ▀▀███████▄██████████
+
+*/
+@-moz-document url-prefix("https://vrchat.com/home") {
+	.col-md-9, .css-rqhlr5{
+		width: 100%;
+		max-width: 1600px;
+	}
+	.css-158ik7x .size-huge .user-bio, .css-158ik7x .size-huge .user-bio-links, .css-xpha89, .css-feutt4{
+		width: 100%;
+	}
+	.css-158ik7x .user-info{
+		width: 71%;
+	}
+	.usercard .col-md-1{
+		display: none;
+	}
+	.css-rqhlr5 .btn-group-vertical{
+		flex-direction: row;
+	}
+	.css-rqhlr5 .btn{
+		margin: 5px !important;
+		border-radius: 5px !important;
+		text-align: center;
+	}
+	.css-vq20h4 .mt-5{
+		margin-top: 1rem !important;
+	}
+	.css-vq20h4 .mb-5{
+		margin-bottom: 2rem !important;
+	}
+	.css-vq20h4 .pb-5{
+		margin-bottom: 0 !important;
 	}
 }
