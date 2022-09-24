@@ -205,8 +205,8 @@ if cursorEnable{
 */
 
 	.contentContainer .contentInnerContainer{
-		max-width: 1600px;
-		width: 80%;
+		max-width: 1500px;
+		width: 100%;
 	}
 	.publicNav{
 		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%) !important;
@@ -442,8 +442,8 @@ if cursorEnable{
 */
 
 	.boardHome .contentInnerContainer{
-		max-width: 1750px;
-		width: 90%;
+		max-width: 1500px;
+		width: 100%;
 	}
 	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
 		background: var(--moreDarkGrey);
@@ -634,8 +634,8 @@ if cursorEnable{
 
 */
 	.subdomainPost .contentInnerContainer{
-		max-width: 1600px;
-		width: 80%;
+		max-width: 1450px;
+		width: 100%;
 	}
 	.post .postContent .postBody, .commentBody .line{
 		max-width: 100%;
@@ -651,7 +651,7 @@ if cursorEnable{
 		padding: 0 0 0 10px;
 	}
 	.userLockup .userInfo .name{
-		color: var(--fauxWhite);
+		color: #00FFFF;
 	}
 	.userLockup .userInfo, .userLockup .userInfo .name, .postStatusChange .topContainer .update span{
 		line-height: 36px;
@@ -1000,10 +1000,10 @@ if cursorEnable{
 */
 @-moz-document domain("ask.vrchat.com") {
 	:root{
-		--base-font-size: 16px;
+		--base-font-size: 14px;
 	}
 	html body #main-outlet, .wrap{
-		max-width: 1600px;
+		max-width: 1400px;
 	}
 	video{
 		max-height: none;
