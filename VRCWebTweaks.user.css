@@ -1,27 +1,31 @@
 /*
- ██▒   █▓ ██▀███   ▄████▄   ██░ ██  ▄▄▄     ▄▄▄█████▓     █     █░ ▓█████ ▄▄▄▄   ▄▄▄█████▓ █     █░ ▓█████ ▄▄▄      ██ ▄█▀  ██████ 
-▓██░   █▒▓██ ▒ ██▒▒██▀ ▀█ ▒▓██░ ██ ▒████▄   ▓  ██▒ ▓▒    ▓█░ █ ░█░ ▓█   ▀▓█████▄ ▓  ██▒ ▓▒▓█░ █ ░█░ ▓█   ▀▒████▄    ██▄█▒ ▒██    ▒ 
- ▓██  █▒░▓██ ░▄█ ▒▒▓█    ▄░▒██▀▀██ ▒██  ▀█▄ ▒ ▓██░ ▒░    ▒█░ █ ░█  ▒███  ▒██▒ ▄██▒ ▓██░ ▒░▒█░ █ ░█  ▒███  ▒██  ▀█▄ ▓███▄░ ░ ▓██▄   
+ ██▒   █▓ ██▀███   ▄████▄   ██░ ██  ▄▄▄     ▄▄▄█████▓     █     █░ ▓█████ ▄▄▄▄   ▄▄▄█████▓ █     █░ ▓█████ ▄▄▄      ██ ▄█▀  ██████
+▓██░   █▒▓██ ▒ ██▒▒██▀ ▀█ ▒▓██░ ██ ▒████▄   ▓  ██▒ ▓▒    ▓█░ █ ░█░ ▓█   ▀▓█████▄ ▓  ██▒ ▓▒▓█░ █ ░█░ ▓█   ▀▒████▄    ██▄█▒ ▒██    ▒
+ ▓██  █▒░▓██ ░▄█ ▒▒▓█    ▄░▒██▀▀██ ▒██  ▀█▄ ▒ ▓██░ ▒░    ▒█░ █ ░█  ▒███  ▒██▒ ▄██▒ ▓██░ ▒░▒█░ █ ░█  ▒███  ▒██  ▀█▄ ▓███▄░ ░ ▓██▄
   ▒██ █░░▒██▀▀█▄  ▒▓▓▄ ▄██ ░▓█ ░██ ░██▄▄▄▄██░ ▓██▓ ░     ░█░ █ ░█  ▒▓█  ▄▒██░█▀  ░ ▓██▓ ░ ░█░ █ ░█  ▒▓█  ▄░██▄▄▄▄██▓██ █▄   ▒   ██▒
    ▒▀█░  ░██▓ ▒██▒▒ ▓███▀  ░▓█▒░██▓▒▓█   ▓██  ▒██▒ ░     ░░██▒██▓ ▒░▒████░▓█  ▀█▓  ▒██▒ ░ ░░██▒██▓ ▒░▒████▒▓█   ▓██▒██▒ █▄▒██████▒▒
    ░ ▐░  ░ ▒▓ ░▒▓░░ ░▒ ▒    ▒ ░░▒░▒░▒▒   ▓▒█  ▒ ░░       ░ ▓░▒ ▒  ░░░ ▒░ ░▒▓███▀▒  ▒ ░░   ░ ▓░▒ ▒  ░░░ ▒░ ░▒▒   ▓▒█▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░
    ░ ░░    ░▒ ░ ▒░  ░  ▒    ▒ ░▒░ ░░ ░   ▒▒     ░          ▒ ░ ░  ░ ░ ░  ▒░▒   ░     ░      ▒ ░ ░  ░ ░ ░  ░ ░   ▒▒ ░ ░▒ ▒░░ ░▒  ░ ░
-     ░░     ░   ░ ░         ░  ░░ ░  ░   ▒    ░            ░   ░      ░   ░    ░   ░ ░      ░   ░      ░    ░   ▒  ░ ░░ ░ ░  ░  ░  
-      ░     ░     ░ ░       ░  ░  ░      ░                   ░    ░   ░   ░                   ░    ░   ░        ░  ░  ░         ░  
+     ░░     ░   ░ ░         ░  ░░ ░  ░   ▒    ░            ░   ░      ░   ░    ░   ░ ░      ░   ░      ░    ░   ▒  ░ ░░ ░ ░  ░  ░
+      ░     ░     ░ ░       ░  ░  ░      ░                   ░    ░   ░   ░                   ░    ░   ░        ░  ░  ░         ░
 */
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.0.9
+@version		0.1.0
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
 @author			Metamaniac (Table)
 @preprocessor	stylus
-@var select		customFont			"Font Override"				["Dosis*", "inherit"]
+@var checkbox	fontOverride		"Font Override"				1
+@var select		customFont			"Custom Font"				["Dosis*", "Noto Serif", "Nunito", "Quicksand", "Roboto", "Rubik", "Comic Sans MS", "Times New Roman"]
 @var checkbox	cursorEnable		"Use VRChat Cursor"			1
 @var color		accentColor			"Accent Color"				#eb8500
 @var color		postTitle			"Post Titles"				#fc0
+@var color		userNames			"Username Color"			#f8f9fa
+@var range		mainWidth			"Main Elements Width"		[1400, 1200, 1600, 50, "px"]
+@var select		avatarShape			"Avatar Icon Shape"			{"Square": "0", "Squareish*": "30%", "Round": "50%"}
 ==/UserStyle== */
 
 /*
@@ -37,7 +41,7 @@
 */
 @-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @keyframes shake {
 	10%, 90% {transform: translate(-1px, 0);}
 	20%, 80% {transform: translate(2px, 0);}
@@ -66,15 +70,17 @@
 	--lessDarkGrey: #252a30;
 }
 
-	body, h1, h2, h3, h4, h5, h6{
+if fontOverride{
+	body, h1, h2, h3, h4, h5, h6, .markdown-body{
 		font-family: customFont, sans-serif !important;
 	}
+}
 
 if cursorEnable{
-	body, html, /* CANNY */ label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled, /* MAIN PAGE */ .css-1jz15bg .world, .css-1jz15bg .nav-disabled{
+	body, html, /* CANNY */ label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled, /* ASK FORUM */ aside.quote[data-full=true] .title, .discourse-reactions-state-panel-reaction, .mfp-bottom-bar, .mfp-counter, /* MAIN PAGE */ .css-1jz15bg .world, .css-1jz15bg .nav-disabled{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto !important;
 	}
-	a, /* CANNY */ .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem, /* MAIN PAGE */ .btn, [role="button"], .css-1lj5puh, .css-u6aj87:hover, .css-1hxxm2l, .css-1jz15bg .world-nav:not(.nav-disabled), .css-1jz15bg .world *, input[type="checkbox"]{
+	a, /* CANNY */ .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem, /* ASK FORUM */ aside.quote .title, .discourse-reactions-counter, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button .reaction-button, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button, .timeline-container .topic-timeline .timeline-scroller, .timeline-container .topic-timeline .timeline-padding, .mfp-gallery .mfp-image-holder .mfp-figure, /* MAIN PAGE */ .btn, [role="button"], .css-1lj5puh, .css-u6aj87:hover, .css-1hxxm2l, .css-1jz15bg .world-nav:not(.nav-disabled), .css-1jz15bg .world *, input[type="checkbox"]{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto !important;
 	}
 }
@@ -128,7 +134,7 @@ if cursorEnable{
 */
 
 	.subdomainHome .contentInnerContainer{
-		max-width: 1600px;
+		max-width: mainWidth;
 		width: 80%;
 	}
 	.boardGridItem{
@@ -205,7 +211,7 @@ if cursorEnable{
 */
 
 	.contentContainer .contentInnerContainer{
-		max-width: 1600px;
+		max-width: mainWidth;
 		width: 80%;
 	}
 	.publicNav{
@@ -305,7 +311,7 @@ if cursorEnable{
 		height: 52px;
 	}
 	.userAvatar .avatarContainer, .userAvatar .avatarContainer img{
-		border-radius: 30%;
+		border-radius: avatarShape;
 	}
 	.adminNavAccountMenuPortal .menuItems{
 		background: var(--lessDarkGreen);
@@ -368,6 +374,14 @@ if cursorEnable{
 	}
 	.notificationsDropdownHeader span{
 		color: accentColor !important;
+	}
+	.iconButton{
+		color: var(--fauxWhite);
+		background: transparent;
+	}
+	.iconButton:hover{
+		color: #fff;
+		background: #64646466;
 	}
 	.publicNav .publicNavContent .mainNav .rightContainer .notificationsMenu .menu.hasUnread .badge{
 		background: #ed2b2b !important;
@@ -442,7 +456,7 @@ if cursorEnable{
 */
 
 	.boardHome .contentInnerContainer{
-		max-width: 1750px;
+		max-width: mainWidth + 150px;
 		width: 90%;
 	}
 	.postListContainer, .postList, .postList .loading, .boardHome .postListContainer{
@@ -559,7 +573,7 @@ if cursorEnable{
 		max-width: 450px;
 	}
 	.boardDetails{
-		max-height: none;
+		max-height: 90vh;
 		background: var(--moreDarkGreen);
 		border: 2px solid var(--moreDarkGreenBorder);
 		border-radius: 8px;
@@ -567,6 +581,13 @@ if cursorEnable{
 	}
 	.boardDetails .heading{
 		font-size: 22px;
+	}
+	.createPostForm .autoResizeTextarea{
+		height: inherit !important;
+		padding: 0;
+	}
+	.createPostForm .autoResizeTextarea .inputContainer textarea{
+		padding: 8px 12px;
 	}
 	.createPostForm .autoResizeTextarea, .createPostForm .textInput, .createPostForm textarea, .createPostForm input, .createPostForm .categoryDropdown .topContainer{
 		background: var(--lessDarkGreen);
@@ -634,7 +655,7 @@ if cursorEnable{
 
 */
 	.subdomainPost .contentInnerContainer{
-		max-width: 1600px;
+		max-width: mainWidth;
 		width: 80%;
 	}
 	.post .postContent .postBody, .commentBody .line{
@@ -651,7 +672,7 @@ if cursorEnable{
 		padding: 0 0 0 10px;
 	}
 	.userLockup .userInfo .name{
-		color: var(--fauxWhite);
+		color: userNames;
 	}
 	.userLockup .userInfo, .userLockup .userInfo .name, .postStatusChange .topContainer .update span{
 		line-height: 36px;
@@ -684,6 +705,9 @@ if cursorEnable{
 		line-height: 24px;
 		color: #fff;
 		font-weight: 700;
+	}
+	.markdown .bold, .markdown .italics{
+		font-size: inherit;
 	}
 	.editing .composerForm .buttonBar .rightContainer .blackButton, .subdomainPost .editContainer .formButtons button, .confirmModal .cannyButton, .errorModal .cannyButton, .commentComposer .blackButton{
 		background: #206eff !important;
@@ -1002,17 +1026,43 @@ if cursorEnable{
 	:root{
 		--base-font-size: 16px;
 	}
+	html body{
+		background: linear-gradient(90deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%);
+	}
+	html .background-container{
+		background: linear-gradient(90deg, var(--moreDarkGreenBorder) 0%, var(--lessDarkGreenBorder) 100%);
+		height: 80vh;
+		filter: opacity(30%);
+	}
 	html body #main-outlet, .wrap{
-		max-width: 1600px;
+		max-width: mainWidth;
+	}
+	.archetype-regular #main-outlet{
+		padding: 3em 0 5% 3em
 	}
 	video{
 		max-height: none;
 	}
+
+	/* Honestly not super sure about centering the images; temporary workaround until I figure out how to use JS to make them NOT thumbnail resolution */
+	.lightbox-wrapper{
+		display: block;
+	}
+	.lightbox-wrapper, .lightbox-wrapper .lightbox, .cooked img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji), .d-editor-preview img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji){
+		text-align: center;
+	}
+
 	.topic-body{
 		width: 100%;
 	}
+	.container.posts .topic-navigation{
+		width: 100px;
+	}
 	p{
 		font-size: 18px;
+	}
+	.custom-search-banner-wrap{
+		color: var(--fauxWhite);
 	}
 	.d-header-icons .unread-notifications{
 		background-color: accentColor;
@@ -1022,6 +1072,12 @@ if cursorEnable{
 	}
 	.small-action{
 		max-width: none;
+	}
+	img.avatar{
+		border-radius: avatarShape;
+	}
+	.group-info .avatar-flair{
+		border-radius: 0;
 	}
 }
 
@@ -1116,10 +1172,45 @@ if cursorEnable{
 
 */
 @-moz-document domain("status.vrchat.com") {
+	body{
+		padding-bottom: 0;
+	}
+	.container{
+		display: flex;
+		max-width: mainWidth - 200px !important;
+		width: 90%;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.app-banner, .section-status, .section-components, div#vrccharts{
+		max-width: 1000px;
+	}
+	.container, .col-md-12{
+		padding: 0;
+	}
+	.section-status, .section-components, div#vrccharts, .section-timeline{
+		width: 100%;
+	}
+	.section-components{
+		margin-top: 20px !important;
+	}
+	div#vrccharts{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		margin-top: 30px;
+		scale: 120%;
+	}
+	.section-components .list-group .list-group-item{
+		font-size: 22px !important;
+		text-shadow: 0 1px 2px #000;
+	}
 	body.status-page footer{
 		border-top: 0;
 		text-align: center;
 		text-shadow: 0 1px 2px #000;
+		padding: 0;
 	}
 }
 
