@@ -12,7 +12,7 @@
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.1.1
+@version		0.1.2
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
@@ -39,7 +39,7 @@
   ▀▀█████████████████ ▀▀████▀▀ ▄████████▄███▄   ▄████▄█████████
 
 */
-@-moz-document domain("vrchat.com"), domain("vrchat.canny.io") {
+@-moz-document domain("vrchat.com"), domain("vrchat.canny.io"), domain("vrcwebtweaks.canny.io") {
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @keyframes shake {
@@ -71,16 +71,24 @@
 }
 
 if fontOverride{
-	body, h1, h2, h3, h4, h5, h6, .markdown-body{
+	body, h1, h2, h3, h4, h5, h6, p, .markdown-body, .rm-Guides, .rm-SearchToggle, .rm-SearchToggle-shortcut, span, input{
 		font-family: customFont, sans-serif !important;
 	}
 }
 
 if cursorEnable{
-	body, html, /* CANNY */ label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled, /* ASK FORUM */ aside.quote[data-full=true] .title, .discourse-reactions-state-panel-reaction, .mfp-bottom-bar, .mfp-counter, /* MAIN PAGE */ .css-1jz15bg .world, .css-1jz15bg .nav-disabled{
+	body, html,
+	/* CANNY */ label, .postListMenu .menu .text, .postListMenu .menu .selector .dropdown, .postMenu .deleteLink, .postMenu .editLink, .postMenu .timestampLink, .commentMenu .menu .timestamp, .fileInput .fileInputButton.disabled, .textInput.disabled, .textInput.disabled .inset, input:disabled,
+	/* ASK FORUM */ aside.quote[data-full=true] .title, .discourse-reactions-state-panel-reaction, .mfp-bottom-bar, .mfp-counter,
+	/* MAIN PAGE */ .css-1jz15bg .world, .css-1jz15bg .nav-disabled{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default.png") 5 5, auto !important;
 	}
-	a, /* CANNY */ .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem, /* ASK FORUM */ aside.quote .title, .discourse-reactions-counter, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button .reaction-button, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button, .timeline-container .topic-timeline .timeline-scroller, .timeline-container .topic-timeline .timeline-padding, .mfp-gallery .mfp-image-holder .mfp-figure, /* MAIN PAGE */ .btn, [role="button"], .css-1lj5puh, .css-u6aj87:hover, .css-1hxxm2l, .css-1jz15bg .world-nav:not(.nav-disabled), .css-1jz15bg .world *, input[type="checkbox"]{
+	a,
+	/* CANNY */ .buttonStyle, button, .authButton, .dropdownContainer, .publicNav .publicNavContent .secondaryNav .link, .postListItem .postLink, .fileInput .fileInputButton, .postVotes, .adminNavAccountMenu .userAvatar, .iconButton, .notification, .notificationsMenuPortal .notificationsDropdown .notificationsDropdownHeader span, .categorySelector .categoryInput .suggestions .suggestion, .createPostForm .categoryDropdown .topContainer, .postListMenu .menu .selector, .postListMenu .menu .selector .dropdown .sorts .option, .postListMenu .menu .selector .dropdown .filters .option, .postListMenu .menu .selector .dropdown .categories .option, .postListMenu .searchBar .icon-search, .postListMenu .icon-x, .reactionsMenu .reactionButton, .commentMenu .menu .reply, .postActivity .header .sorts .sortOption, .subdomainNotifications .notificationHeader .markAll, .adminNavAccountMenuPortal .menuItems .section .menuItem, .comment .topContainer .icon-x, .commentMenu .menu .edit, .postImages img, .photoViewer img.currentImage,
+	/* ASK FORUM */ aside.quote .title, .discourse-reactions-counter, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button .reaction-button, .discourse-reactions-actions.can-toggle-reaction .discourse-reactions-reaction-button, .timeline-container .topic-timeline .timeline-scroller, .timeline-container .topic-timeline .timeline-padding, .mfp-gallery .mfp-image-holder .mfp-figure,
+	/* DOCS */ .Tabs-listItem,
+	/* MAIN PAGE */ .btn, .css-1d2jslt, .css-1ya9khu, .css-1lj5puh, .css-u6aj87:hover, .css-1hxxm2l, .css-1jz15bg .world-nav:not(.nav-disabled), .css-1jz15bg .world *, input[type="checkbox"], .e1ufza0y3:hover
+	{
 		cursor: url("https://github.com/Metamaniac/VRCWebTweaks/raw/main/default_vrc_recolor.png") 5 5, auto !important;
 	}
 }
@@ -97,7 +105,7 @@ if cursorEnable{
   ▀▀█████▀▄███▄   ▄████▄███▄    ██ ▄███▄    ██    ▄████▄
 
 */
-@-moz-document domain("feedback.vrchat.com"), domain("vrchat.canny.io") {
+@-moz-document domain("feedback.vrchat.com"), domain("vrchat.canny.io"), domain("vrcwebtweaks.canny.io") {
 
 /*
 
@@ -196,8 +204,27 @@ if cursorEnable{
 		font-size: 25px;
 		text-align: center;
 	}
-
-
+	.roadmapView .roadmapColumn .scrollContainer{
+		background: var(--moreDarkGrey);
+		margin: 0;
+	}
+	.roadmapView .roadmapColumn .columnHeader{
+		position: relative;
+		background: var(--lessDarkGrey);
+		box-shadow: 0 4px 5px #000;
+	}
+	.roadmapView .roadmapColumn .columnHeader .statusName{
+		color: var(--fauxWhite);
+	}
+	.roadmapView .roadmapColumn .scrollContainer .postList .postListItem .postVotes{
+		background: var(--moreDarkGreen);
+	}
+	.roadmapView .roadmapColumn .scrollContainer .postList .postListItem .postVotes:hover{
+		background: var(--lessDarkGreen);
+	}
+	.roadmapView .roadmapColumn .scrollContainer .postList .postListItem:first-child{
+		margin: 0;
+	} 
 
 /*
 
@@ -257,6 +284,9 @@ if cursorEnable{
 	.dropdownContainer .selection.split .icon-chevron-down{
 		padding: 0;
 	}
+	.secondaryNav .dropdownContainer button{
+		background: transparent;
+	}
 	
 
 /*
@@ -310,6 +340,13 @@ if cursorEnable{
 		width: 52px;
 		height: 52px;
 	}
+	/* COHOST SQUARISH FRAME */
+	/* .userAvatar .avatarContainer{
+		mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
+		mask-size: 100%;
+		mask-repeat: no-repeat;
+		mask-position: center;
+	} */
 	.userAvatar .avatarContainer, .userAvatar .avatarContainer img{
 		border-radius: avatarShape;
 	}
@@ -844,10 +881,12 @@ if cursorEnable{
 		color: var(--fauxWhite);
 	}
 	.postHeader .statusTitle .postTitle{
-		color: postTitle;
-		text-shadow: -1px 0 2px #000, 0 1px 2px #000, 1px 0 2px #000, 0 -1px 2px #000;
+		color: transparent;
+		background-image: linear-gradient(180.5deg, rgb(255, 255, 255) 10%, postTitle, postTitle - 100);
+		background-clip: text;
 		font-size: 25px;
-		line-height: 30px;
+		font-weight: 500;
+		line-height: 40px;
 		margin: 0;
 	}
 
@@ -892,6 +931,16 @@ if cursorEnable{
 	}
 	.photoViewer img.currentImage{
 		filter: drop-shadow(0px 0px 20px #000);
+	}
+	.customPostFields .postFieldList .postField .label{
+		color: var(--fauxWhite);
+	}
+	.customPostFields .postFieldList .postField .content{
+		color: postTitle;
+	}
+	/* If you work for VRChat, probably get rid of this block of code underneath lmao */
+	.configureLink{
+		display: none;
 	}
 
 
@@ -954,6 +1003,9 @@ if cursorEnable{
 		border: 0;
 		box-shadow: 0 0 10px #000;
 	}
+	.comment .topContainer .icon-x:hover{
+		color: #af0000;
+	}
 	.reactionsMenu .reactors .more{
 		margin: 5px 0;
 		display: flex;
@@ -962,6 +1014,24 @@ if cursorEnable{
 	.reactionsMenu .reactors .more button{
 		background-color: transparent;
 		color: accentColor;
+	}
+	.dropdownContainer{
+		background: transparent;
+	}
+	.dropdownContainer button{
+		background: var(--moreDarkGreen);
+		border: 2px solid var(--moreDarkGreenBorder)
+		color: var(--fauxWhite);
+	}
+	.dropdownContainer button div{
+		font-size: 18px;
+	}
+	.dropdownContainer .selection .icon-chevron-down{
+		color: var(--fauxWhite);
+	}
+	.dropdownPortal:not(.publicNavBoardDropdown) .dropdown{
+		border: 2px solid var(--lessDarkGreenBorder);
+		color: var(--fauxWhite);
 	}
 	.modal{
 		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%);
@@ -1091,6 +1161,151 @@ if cursorEnable{
 		border-right: 0;
 	}
 
+/*
+
+ █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗
+██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║
+███████║██║  ██║██╔████╔██║██║██╔██╗ ██║
+██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║
+██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║
+╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝
+
+*/
+
+	.adminNav{
+		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%) !important;
+		border-bottom: 3px solid var(--moreDarkGreenBorder);
+	}
+
+}
+
+/*
+
+▀███▀▀▀██▄   ▄▄█▀▀██▄   ▄▄█▀▀▀█▄████▀   ▀███▀████▄     ▄███▀███▀▀▀███▀███▄   ▀███▀██▀▀██▀▀███     ██     ███▀▀██▀▀███████▀ ▄▄█▀▀██▄ ▀███▄   ▀███▀
+  ██    ▀██▄██▀    ▀██▄██▀     ▀███       █   ████    ████   ██    ▀█  ███▄    █ █▀   ██   ▀█    ▄██▄    █▀   ██   ▀█ ██ ▄██▀    ▀██▄ ███▄    █
+  ██     ▀███▀      ▀███▀       ▀██       █   █ ██   ▄█ ██   ██   █    █ ███   █      ██        ▄█▀██▄        ██      ██ ██▀      ▀██ █ ███   █
+  ██      ███        ███         ██       █   █  ██  █▀ ██   ██████    █  ▀██▄ █      ██       ▄█  ▀██        ██      ██ ██        ██ █  ▀██▄ █
+  ██     ▄███▄      ▄███▄        ██       █   █  ██▄█▀  ██   ██   █  ▄ █   ▀██▄█      ██       ████████       ██      ██ ██▄      ▄██ █   ▀██▄█
+  ██    ▄██▀██▄    ▄██▀██▄     ▄▀██▄     ▄█   █  ▀██▀   ██   ██     ▄█ █     ███      ██      █▀      ██      ██      ██ ▀██▄    ▄██▀ █     ███
+▄████████▀   ▀▀████▀▀   ▀▀█████▀  ▀██████▀▀ ▄███▄ ▀▀  ▄████▄█████████████▄    ██    ▄████▄  ▄███▄   ▄████▄  ▄████▄  ▄████▄ ▀▀████▀▀ ▄███▄    ██
+
+*/
+@-moz-document domain("docs.vrchat.com") {
+
+/*
+
+██████╗  █████╗ ███████╗███████╗
+██╔══██╗██╔══██╗██╔════╝██╔════╝
+██████╔╝███████║███████╗█████╗
+██╔══██╗██╔══██║╚════██║██╔══╝
+██████╔╝██║  ██║███████║███████╗
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+*/
+
+	body, html{
+		background: #0e1013;
+		background-image: url("https://s3.amazonaws.com/assets.vrchat.com/www/images/Background_lines.svg");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		overflow-x: clip;
+	}
+	.rm-Container{
+		max-width: mainWidth + 150px !important;
+		width: 90% !important;
+	}
+	.rm-Guides .rm-Container{
+		background: var(--moreDarkGrey);
+		filter: drop-shadow(0px 0px 100px #000);
+		
+	}
+	.rm-Guides_loading::before{
+		background: transparent;
+	}
+
+/*
+
+████████╗ ██████╗ ██████╗     ██████╗  █████╗ ██████╗
+╚══██╔══╝██╔═══██╗██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗
+   ██║   ██║   ██║██████╔╝    ██████╔╝███████║██████╔╝
+   ██║   ██║   ██║██╔═══╝     ██╔══██╗██╔══██║██╔══██╗
+   ██║   ╚██████╔╝██║         ██████╔╝██║  ██║██║  ██║
+   ╚═╝    ╚═════╝ ╚═╝         ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+*/
+	.rm-Header{
+		background: linear-gradient(0deg, var(--moreDarkGreen) 0%, var(--lessDarkGreen) 100%);
+		border-bottom: 3px solid var(--moreDarkGreenBorder);
+		--Header-border-width: 0;
+	}
+	.rm-Logo{
+		margin-top: 12px;
+		padding: 0;
+	}
+	.Header-search_featherYsmQBn55F3d9{
+		box-shadow: 0 0;
+	}
+	
+	.reference-redesign .Sidebar-headingTRQyOa2pk0gh{
+		color: postTitle;
+	}
+	.reference-redesign .Sidebar-link2Dsha-r-GKh2{
+		color: var(--fauxWhite);
+	}
+	
+/*
+
+██████╗  ██████╗ ██████╗ ██╗   ██╗
+██╔══██╗██╔═══██╗██╔══██╗╚██╗ ██╔╝
+██████╔╝██║   ██║██║  ██║ ╚████╔╝
+██╔══██╗██║   ██║██║  ██║  ╚██╔╝
+██████╔╝╚██████╔╝██████╔╝   ██║
+╚═════╝  ╚═════╝ ╚═════╝    ╚═╝
+
+*/
+	.rm-Guides .content-body{
+		max-width: none;
+		width: 100%;
+	}
+	/* Don't waste the space on the right for the table of contents if there IS no table of contents- silly! smh my head */
+	.content-toc:empty{
+		display: none;
+	}
+	.rm-Guides #content-head .col-xs-9{
+		color: postTitle;
+	}
+	.content-body, .markdown-body table, .markdown-body table thead{
+		color: var(--fauxWhite);
+	}
+	.content-body p{
+		font-size: 18px;
+	}
+	.callout.callout{
+		background: var(--lessDarkGrey);
+	}
+	.markdown-body table tr{
+		background: var(--lessDarkGreen);
+	}
+	.markdown-body table:not(.plain) tr:nth-child(2n), .markdown-body .rdmd-table table:only-child thead tr{
+		background: var(--moreDarkGreen);
+	}
+	.markdown-body table td, .markdown-body table th{
+		border: 2px solid var(--lessDarkGreenBorder) !important;
+	}
+	.markdown-body code{
+		background: #000;
+	}
+	.rdmd-table .rdmd-code{
+		background: var(--moreDarkGreen);
+	}
+	.markdown-body table:not(.plain) tr:nth-child(2n) .rdmd-code{
+		background: var(--moreDarkGreenBorder);
+	}
+	.content-toc .toc-list > li:not(.toc-children) :first-child{
+		background: transparent;
+		font-size: 16px;
+	}
 }
 
 /*
@@ -1165,6 +1380,13 @@ if cursorEnable{
 	.group-info .avatar-flair{
 		border-radius: 0;
 	}
+	.topic-avatar .avatar-flair{
+		bottom: 24px;
+	}
+	.names span a{
+		color: userNames;
+	}
+	
 }
 
 /*
@@ -1217,6 +1439,9 @@ if cursorEnable{
 
 */
 
+	.fa{
+		font-family: "Font Awesome 6 Free" !important;
+	}
 	footer{
 		text-align: center;
 	}
@@ -1342,4 +1567,5 @@ if cursorEnable{
 	.css-vq20h4 .pb-5{
 		margin-bottom: 0 !important;
 	}
+
 }
