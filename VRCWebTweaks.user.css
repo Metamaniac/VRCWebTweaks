@@ -12,7 +12,7 @@
 /* ==UserStyle==
 @name			VRChat WebTweaks
 @namespace		table
-@version		0.1.2.1
+@version		0.1.2.5
 @homepageURL	https://github.com/Metamaniac/VRCWebTweaks
 @updateURL		https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaks.user.css
 @description	Making the VRChat Web experience better since that year with all the 2s in it!
@@ -127,6 +127,9 @@ if cursorEnable{
 	}
 	a{
 		font-size: inherit;
+	}
+	#intercom-container{
+		display: none !important;
 	}
 
 
