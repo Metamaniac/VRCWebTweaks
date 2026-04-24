@@ -24,6 +24,8 @@
 
 - Hit "Install style" and ensure that you leave "Check for updates" on to not miss any future improvements!
 
+Additionally, due to strict CSP rules imposed by Canny specifically, custom font overrides will no longer work out-of-the-box unless you already have said font installed on your PC. If you do not wish to do this, or are physically unable to due to lack of system permissions, then you can [click here](https://github.com/Metamaniac/VRCWebTweaks/raw/main/VRCWebTweaksCannyFonts.user.css) to install a supplementary stylesheet which embeds the fonts directly in 6MB of Base64. This *really* sucks, I ***strongly*** recommend installing the fonts yourself instead- if possible.
+
 # Page Status
 
 
