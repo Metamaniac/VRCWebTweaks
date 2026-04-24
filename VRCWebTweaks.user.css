@@ -120,7 +120,7 @@ if cursorEnable{
 
 	body, html{
 		background: #0e1013;
-		background-image: url("https://s3.amazonaws.com/assets.vrchat.com/www/images/Background_lines.svg");
+		background-image: url("https://assets.vrchat.com/www/images/Background_lines.svg");
 		background-size: auto 100%;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
